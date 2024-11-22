@@ -1,4 +1,4 @@
-type IProjectType = {
+export type IProjectType = {
     title: string,
     description: string,
     location?: LocationType,
@@ -10,7 +10,7 @@ type IProjectType = {
     expenses?: PriceType,
 }
 
-type LocationType = {
+export type LocationType = {
     province?: string,
     city: string,
     hood?: string,
@@ -19,11 +19,11 @@ type LocationType = {
     map?: string,    
 }
 
-type OperationType = {
+export type OperationType = {
     type: "SALE" | "RENT"
 }
 
-type SpecificationsType = {
+export type SpecificationsType = {
     surface?: SurfaceType,
     age?: number,
     rooms?: number,
@@ -35,14 +35,14 @@ type SpecificationsType = {
     professional?: boolean,
 }
 
-type SurfaceType = {
+export type SurfaceType = {
     surfaceTotal?: number,
     surfaceCover?: number,
     surfaceSemicover?: number,
     surfaceLand?: number
 }
 
-type PriceType = {
+export type PriceType = {
     price: number,
     currency: "USD" | "ARS"
 }

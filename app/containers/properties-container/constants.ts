@@ -1,3 +1,5 @@
+import { IProjectType } from "@/app/types";
+
 export const projects: IProjectType[] = [
     {
         title: "NAVE A ESTRENAR EN PLAZA INDUSTRIAL ESCOBAR",

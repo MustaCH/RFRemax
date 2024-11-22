@@ -1,5 +1,6 @@
 'use client'
 
+import { LocationType, PriceType } from "@/app/types"
 import Link from "next/link"
 import { FC } from "react"
 
