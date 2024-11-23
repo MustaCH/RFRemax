@@ -1,7 +1,7 @@
 'use client'
 
 import { PriceType } from '@/app/types';
-import React, { useState } from 'react';
+import React from 'react';
 
 interface PriceFormatterProps {
   value: PriceType;
