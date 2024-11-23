@@ -13,8 +13,8 @@ export const Navbar = () => {
 
   return (
     <>        
-        <div className="h-16 md:h-28"></div>  
-        <div className='flex justify-between items-center px-12 py-2 md:py-6 bg-[#B0BBC520] border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md'>
+        <div className="h-16 md:h-20"></div>  
+        <div className='flex justify-between items-center px-12 py-2 bg-[#B0BBC520] border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md'>
             <div>
                 <img src="logo.png" alt="logo-rf" className='w-12 md:w-16' />
             </div>
