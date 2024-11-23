@@ -8,13 +8,13 @@ export const HomeContainer = () => {
             <section>
                 <WelcomeBanner/>
             </section>
-            <section>
+            <section id="propiedades">
                 <PropertiesContainer/>
             </section>
-            <section>
+            <section id="quiensoy">
                 <WhoamiContainer/>
             </section>
-            <section>
+            <section id="contacto">
                 <ContactContainer/>
             </section>
         </div>

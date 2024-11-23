@@ -11,14 +11,14 @@ export const navlinks: navlink[] = [
     },
     {
         "name": "propiedades",
-        "url": "/"
+        "url": "/#propiedades"
     },
     {
         "name": "¿quien soy?",
-        "url": "/"
+        "url": "/#quiensoy"
     },
     {
         "name": "contacto",
-        "url": "/"
+        "url": "/#contacto"
     },
 ]

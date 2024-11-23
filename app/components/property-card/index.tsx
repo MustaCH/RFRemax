@@ -1,6 +1,7 @@
 'use client'
 
 import { LocationType, PriceType } from "@/app/types"
+import { PriceFormatter } from "@/app/utils"
 import Link from "next/link"
 import { FC } from "react"
 
@@ -18,8 +19,8 @@ export const PropertyCard: FC<PropertyCardProps> = ({image, price, expenses, tit
             <div style={{ backgroundImage: `url(${image})` }} className="h-60 bg-center bg-cover bg-no-repeat w-full rounded-t-lg"></div>
             <div className="flex flex-col gap-2 px-6 pb-6 pt-3">
                 <div>
-                    <p className="font-semibold text-lg">{price.price} {price.currency}</p>
-                    {expenses && <p className="text-xs font-light">Expensas: {expenses?.price} {expenses?.currency}</p>}
+                    <PriceFormatter className="font-semibold text-lg" value={price}/>
+                    {expenses && <PriceFormatter title="Expensas:" className="text-xs font-light" value={expenses}/>}
                 </div>
                 <div>
                     <h3 className="text-xs md:text-sm">{title}</h3>

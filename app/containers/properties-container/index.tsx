@@ -4,7 +4,7 @@ import { projects } from "./constants"
 
 export const PropertiesContainer = () => {
     return (
-        <section className="flex flex-col gap-8 p-12 md:p-24">
+        <div className="flex flex-col gap-8 p-12 md:p-24">
                 <div className="flex items-center gap-2 text-xl text-[#3B4352] border-b border-b-[#712536] pb-4">
                     <FaHouse />
                     <h2 className=" capitalize font-medium">propiedades</h2>
@@ -16,7 +16,7 @@ export const PropertiesContainer = () => {
                         ))
                     }
                 </div>
-            </section>
+            </div>
     )
 }
 
