@@ -21,7 +21,7 @@ export const contactItems: ContactItemProp[] = [
     {
         name: 'email',
         value: 'rfrola@remax.com.ar',
-        url: 'mailto:rfrola@remax.com.ar',
+        url: 'mailto:rfrola@remax.com.ar?Subject=Consulta%20por%20inmueble',
         icon: MdOutlineEmail
     },
     {

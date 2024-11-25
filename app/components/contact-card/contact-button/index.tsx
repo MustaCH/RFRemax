@@ -10,11 +10,15 @@ interface ContactButtonProps {
 
 export const ContactButton: FC<ContactButtonProps> = ({name, value, url, Icon}) => {
     return (
-        <div className="group flex flex-col items-center justify-center transition duration-150 h-12">
-            <Icon className='group-hover:hidden text-5xl'/>
-            <a className="hidden group-hover:flex bg-[#E8E7E5]" target='_blank' href={url}>
+        <a target="_blank" href={url} className="relative group flex flex-col items-center justify-center h-12 w-full">
+            <Icon className='absolute group-hover:opacity-0 text-5xl transition-opacity duration-300 ease-out'/>
+            <a                 
+                className="hidden group-hover:flex transition-opacity duration-150 ease-in-out opacity-0 group-hover:opacity-100"
+                target="_blank"
+                href={url}
+            >
                 {value}
             </a>
-        </div>
+        </a>
     )
 }
