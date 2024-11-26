@@ -3,6 +3,7 @@
 import { projects } from "@/app/constants";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper";
 import { Navigation, Pagination, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -22,7 +23,7 @@ export default function PropertyPage({
   params: { id: string };
 }) {
   const [project, setProject] = useState<IProjectType | undefined>();
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   useEffect(() => {
     const foundProject = projects.find((project) => params.id === project.id);
