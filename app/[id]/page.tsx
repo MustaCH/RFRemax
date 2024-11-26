@@ -49,7 +49,7 @@ export default function PropertyPage({
               >
                 {project.images.map((image, index) => (
                   <SwiperSlide key={index}>
-                    <Image
+                    <img
                       src={image}
                       alt={`Slide ${index + 1}`}
                       className="w-full h-80 rounded-lg"
@@ -66,7 +66,7 @@ export default function PropertyPage({
               >
               {project.images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <Image
+                  <img
                     src={image}
                     alt={`Thumbnail ${index + 1}`}
                     className="w-full h-[4rem] rounded-md cursor-pointer"
