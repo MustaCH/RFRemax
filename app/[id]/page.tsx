@@ -48,7 +48,7 @@ export default function PropertyPage({
               >
                 {project.images.map((image, index) => (
                   <SwiperSlide key={index}>
-                    <img
+                    <Image
                       src={image}
                       alt={`Slide ${index + 1}`}
                       className="w-full h-80 rounded-lg"

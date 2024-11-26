@@ -9,7 +9,7 @@ interface ContactButtonProps {
     Icon: IconType;
 }
 
-export const ContactButton: FC<ContactButtonProps> = ({name, value, url, Icon}) => {
+export const ContactButton: FC<ContactButtonProps> = ({value, url, Icon}) => {
     return (
         <Link target="_blank" href={url} className="relative group flex flex-col items-center justify-center h-12 w-full">
             <Icon className='absolute group-hover:opacity-0 text-5xl transition-opacity duration-300 ease-out'/>
