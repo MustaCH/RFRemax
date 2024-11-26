@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar, Footer } from "./components";
 
-// Define la fuente con diferentes pesos
 const outfitFont = localFont({
   src: [
     { path: "./fonts/Outfit-Thin.ttf", weight: "100" },
@@ -16,8 +15,8 @@ const outfitFont = localFont({
     { path: "./fonts/Outfit-ExtraBold.ttf", weight: "800" },
     { path: "./fonts/Outfit-Black.ttf", weight: "900" },
   ],
-  variable: "--font-outfit", // Variable CSS para usar en tus estilos
-  display: "swap", // Mejora la carga de fuentes
+  variable: "--font-outfit", 
+  display: "swap", 
 });
 
 export const metadata: Metadata = {
