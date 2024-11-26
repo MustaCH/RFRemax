@@ -14,6 +14,7 @@ import { PiHouseSimpleBold, PiHouseSimpleDuotone, PiHouseSimpleFill, PiOfficeCha
 import { BiArea, BiBuilding, BiSolidCarGarage } from "react-icons/bi";
 import { MdMeetingRoom, MdOutlineCalendarMonth, MdOutlineKingBed } from "react-icons/md";
 import { TbBath } from "react-icons/tb";
+import Image from "next/image";
 
 export default function PropertyPage({
   params,
@@ -64,7 +65,7 @@ export default function PropertyPage({
               >
               {project.images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <img
+                  <Image
                     src={image}
                     alt={`Thumbnail ${index + 1}`}
                     className="w-full h-[4rem] rounded-md cursor-pointer"
