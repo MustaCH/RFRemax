@@ -15,7 +15,6 @@ import { PiHouseSimpleBold, PiHouseSimpleDuotone, PiHouseSimpleFill, PiOfficeCha
 import { BiArea, BiBuilding, BiSolidCarGarage } from "react-icons/bi";
 import { MdMeetingRoom, MdOutlineCalendarMonth, MdOutlineKingBed } from "react-icons/md";
 import { TbBath } from "react-icons/tb";
-import Image from "next/image";
 
 export default function PropertyPage({
   params,
