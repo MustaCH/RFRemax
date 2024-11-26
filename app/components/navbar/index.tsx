@@ -21,7 +21,7 @@ export const Navbar = () => {
             <div>
                 <ul className='hidden md:flex gap-8'>
                     {navlinks.map((link, index) => (
-                        <li key={index}><Link className={!pathname?.includes(link.url) ? 'uppercase hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={link.url}>{link.name}</Link></li>
+                        <li key={index}><Link className={!pathname?.includes(link.url) ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={link.url}>{link.name}</Link></li>
                     ))}
                 </ul>
             </div>
