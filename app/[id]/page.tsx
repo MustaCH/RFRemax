@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PriceFormatter } from "../utils";
-import { PiHouseSimpleBold, PiHouseSimpleDuotone, PiHouseSimpleFill, PiOfficeChairBold, PiToilet, PiToiletBold } from "react-icons/pi";
+import { PiHouseSimpleBold, PiHouseSimpleDuotone, PiHouseSimpleFill, PiOfficeChairBold, PiToiletBold } from "react-icons/pi";
 import { BiArea, BiBuilding, BiSolidCarGarage } from "react-icons/bi";
 import { MdMeetingRoom, MdOutlineCalendarMonth, MdOutlineKingBed } from "react-icons/md";
 import { TbBath } from "react-icons/tb";
