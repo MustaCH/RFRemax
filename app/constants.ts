@@ -2,6 +2,7 @@ import { IProjectType } from "@/app/types";
 
 export const projects: IProjectType[] = [
     {
+        id: 'nave-a-estrenar-escobar',
         title: "NAVE A ESTRENAR EN PLAZA INDUSTRIAL ESCOBAR",
         description: "NAVE A ESTRENAR EN PLAZA INDUSTRIAL ESCOBAR<br>¡Nave Industrial a Estrenar en Alquiler!<br> Ubicada estratégicamente con excelente acceso sobre la Ruta Panamericana km 57, Ramal Escobar, Loma Verde<br>Esta diseñada para maximizar la eficiencia operativa. Su estilo modular permite adaptarla fácilmente a diversas industrias<br> Lista para adaptarse a las necesidades de su negocio!<br><b>CARACTERÍSTICAS DESTACADAS:</b><br><ul><li>Espacios de Oficinas: Modernas y bien iluminadas perfectas para su equipo administrativo.</li><li>Cocinas y Comedor: Equipadas para el bienestar de su personal, permitiendo comidas cómodas y eficientes.</li><li>Baños: Instalaciones separadas para mujeres y hombres, diseñadas con comodidad y funcionalidad.</li><li>Vestuarios</li><li>Aire Acondicionado: Climatización en todos los ambientes para un entorno de trabajo agradable.</li></ul><br><b>MEDIDAS</b><br><ul><li>Nave: 2.430 m2</li><li>Oficina: 121 m2</li><li>Playa para Maniobras: 903 m2</li><li>Estacionamiento: 110 m2</li></ul><p>Las medidas son aproximadas</p><br><b>Excelente Ubicación:</b>Fácil acceso a vías principales y transporte facilitando la logística y conectividad.<br><br>TE INVITO A VER EL VIDEO, NO TE LO PODES PERDER!!!<br><br> ¡Contáctenos para más detalles y programar una visita!<br><br>Contrato en dólares por 36 meses, Indexación Anual 5%<br>USD 15.200 + IVA por mes<br>Expensas $ 350.000  Las expensas incluyen: seguridad las 24hs, mantenimiento de espacios comunes.<br>Impuestos Municipales $ 300.000<br>Estos montos son aproximados y varían mensualmente, de acuerdo a los gastos de cada mes.<br><br>Anticipo:<br>1 Mes Adelantado<br>1 Mes de Depósito",
         operation: {
@@ -76,6 +77,7 @@ export const projects: IProjectType[] = [
         }
     },
     {
+        id: 'departamento-barrio-parque-con-cochera',
         title: "DEPARTAMENTO 5 AMB. BARRIO PARQUE CON COCHERA",
         description: "",
         operation: {
@@ -157,6 +159,7 @@ export const projects: IProjectType[] = [
         }
     },
     {
+        id: 'depto-puerto-madero-3-cocheras',
         title: "VENTA DEPTO. 3 AMB. PUERTO MADERO - 3 COCHERAS",
         description: "",
         operation: {

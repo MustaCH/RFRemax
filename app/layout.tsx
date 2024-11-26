@@ -3,15 +3,21 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar, Footer } from "./components";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// Define la fuente con diferentes pesos
+const outfitFont = localFont({
+  src: [
+    { path: "./fonts/Outfit-Thin.ttf", weight: "100" },
+    { path: "./fonts/Outfit-ExtraLight.ttf", weight: "200" },
+    { path: "./fonts/Outfit-Light.ttf", weight: "300" },
+    { path: "./fonts/Outfit-Regular.ttf", weight: "400" },
+    { path: "./fonts/Outfit-Medium.ttf", weight: "500" },
+    { path: "./fonts/Outfit-SemiBold.ttf", weight: "600" },
+    { path: "./fonts/Outfit-Bold.ttf", weight: "700" },
+    { path: "./fonts/Outfit-ExtraBold.ttf", weight: "800" },
+    { path: "./fonts/Outfit-Black.ttf", weight: "900" },
+  ],
+  variable: "--font-outfit", // Variable CSS para usar en tus estilos
+  display: "swap", // Mejora la carga de fuentes
 });
 
 export const metadata: Metadata = {
@@ -26,12 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar/>
+      <body className={`${outfitFont.variable} antialiased`}>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

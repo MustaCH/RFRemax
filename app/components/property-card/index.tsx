@@ -6,6 +6,7 @@ import Link from "next/link"
 import { FC } from "react"
 
 interface PropertyCardProps {
+    id: string,
     image: string,
     price: PriceType,
     expenses?: PriceType,
@@ -13,9 +14,9 @@ interface PropertyCardProps {
     location?: LocationType
 }
 
-export const PropertyCard: FC<PropertyCardProps> = ({image, price, expenses, title, location}) => {
+export const PropertyCard: FC<PropertyCardProps> = ({image, price, expenses, title, id, location}) => {
     return (
-        <Link href={''} className="shadow-md rounded-lg border-2 border-transparent hover:border-[#B0BBC5] duration-150 bg-white w-96">
+        <Link href={`/properties/${id}`} className="shadow-md rounded-lg border-2 border-transparent hover:border-[#B0BBC5] duration-150 bg-white w-96">
             <div style={{ backgroundImage: `url(${image})` }} className="h-60 bg-center bg-cover bg-no-repeat w-full rounded-t-lg"></div>
             <div className="flex flex-col gap-2 px-6 pb-6 pt-3">
                 <div>
