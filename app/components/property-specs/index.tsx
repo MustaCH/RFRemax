@@ -15,30 +15,38 @@ export const PropertySpecs: FC<PropertyPageProps> = ({project}) => {
                   <h3 className="text-2xl underline decoration-[#712536] underline-offset-8">Características</h3>
                   <hr />
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center gap-2">
-                      <PiHouseSimpleBold className="text-2xl"/>
-                      <p className="font-bold">
-                        {project?.specifications?.surface?.surfaceTotal} m<sup>2</sup> totales
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <PiHouseSimpleFill className="text-2xl"/>
-                      <p className="font-bold">
-                        {project?.specifications?.surface?.surfaceCover} m<sup>2</sup> cubiertos
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <PiHouseSimpleDuotone className="text-2xl"/>
-                      <p className="font-bold">
-                        {project?.specifications?.surface?.surfaceSemicover} m<sup>2</sup> semicubiertos
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <BiArea className="text-2xl"/>
-                      <p className="font-bold">
-                        {project?.specifications?.surface?.surfaceLand} m<sup>2</sup> terreno
-                      </p>
-                    </div>
+                    {project?.specifications?.surface?.surfaceTotal && 
+                      <div className="flex items-center gap-2">
+                        <PiHouseSimpleBold className="text-2xl"/>
+                        <p className="font-bold">
+                          {project?.specifications?.surface?.surfaceTotal} m<sup>2</sup> totales
+                        </p>
+                      </div>
+                    }
+                    {project?.specifications?.surface?.surfaceCover && 
+                      <div className="flex items-center gap-2">
+                        <PiHouseSimpleFill className="text-2xl"/>
+                        <p className="font-bold">
+                          {project?.specifications?.surface?.surfaceCover} m<sup>2</sup> cubiertos
+                        </p>
+                      </div>
+                    }
+                    {project?.specifications?.surface?.surfaceSemicover && 
+                      <div className="flex items-center gap-2">
+                        <PiHouseSimpleDuotone className="text-2xl"/>
+                        <p className="font-bold">
+                          {project?.specifications?.surface?.surfaceSemicover} m<sup>2</sup> semicubiertos
+                        </p>
+                      </div>
+                    }
+                    {project?.specifications?.surface?.surfaceLand && 
+                      <div className="flex items-center gap-2">
+                        <BiArea className="text-2xl"/>
+                        <p className="font-bold">
+                          {project?.specifications?.surface?.surfaceLand} m<sup>2</sup> terreno
+                        </p>
+                      </div>
+                    }
                   </div>
                   <hr />
                   <div className="grid grid-cols-2 gap-4">
