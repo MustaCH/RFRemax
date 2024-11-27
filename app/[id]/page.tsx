@@ -79,6 +79,7 @@ export default function PropertyPage({
             <p>No hay imágenes disponibles para este proyecto.</p>
           )}          
           <div className="hidden md:inline bg-white border border-[#B0BBC5] p-8 rounded-lg h-fit">
+            <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">Descripción</h2>
             <div
               className={`overflow-hidden transition-all duration-1000 ${
                 isExpanded ? "max-h-full" : "max-h-48"
@@ -103,6 +104,7 @@ export default function PropertyPage({
             <PropertySpecs project={project}/>
           </div>
           <div className="inline md:hidden bg-white border border-[#B0BBC5] p-8 rounded-lg">
+            <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">Descripción</h2>
             <div
               className={`overflow-hidden transition-all duration-1000 ${
                 isExpanded ? "max-h-full" : "max-h-40"
