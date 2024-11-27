@@ -125,6 +125,10 @@ export default function PropertyPage({
           <div>
             <PropertyContact project={project}/>
           </div>
+          <div className="flex flex-col gap-2 bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
+            <h4 className="text-2xl">Disclaimer</h4>
+            <p className="text-sm">Corredor Matriculado Responsable José David Winer -CUCICBA 6346- CMCPSI 6433.<br/> Todas las propiedades que figuran en éste sitio web se encuentran a cargo de un profesional matriculado, la intermediación y la conclusión de las operaciones serán llevadas exclusivamente por él.</p>
+          </div>
         </div>
       </div>
     </main>
