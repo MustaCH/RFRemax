@@ -52,7 +52,7 @@ export default function PropertyPage({
                     <img
                       src={image}
                       alt={`Slide ${index + 1}`}
-                      className="w-full h-80 rounded-lg"
+                      className="w-full h-full rounded-lg"
                     />
                   </SwiperSlide>
                 ))}
