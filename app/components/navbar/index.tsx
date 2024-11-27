@@ -14,7 +14,7 @@ export const Navbar = () => {
   return (
     <>        
         <div className="h-16 md:h-20"></div>  
-        <a href='/' className='flex justify-between items-center px-12 py-2 bg-[#B0BBC520] border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md z-50'>
+        <Link href='/' className='flex justify-between items-center px-12 py-2 bg-[#B0BBC520] border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md z-50'>
             <div>
                 <img src="logo.png" alt="logo-rf" className='w-12 md:w-16' />
             </div>
@@ -25,7 +25,7 @@ export const Navbar = () => {
                     ))}
                 </ul>
             </div>
-        </a>
+        </Link>
     </>
   )
 }
