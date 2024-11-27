@@ -4,7 +4,7 @@ import { projects } from "@/app/constants";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
-import { Navigation, Pagination, Thumbs } from "swiper/modules";
+import { Navigation, Pagination, Thumbs, Zoom } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -36,34 +36,37 @@ export default function PropertyPage({
     <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 justify-evenly gap-4">
         <div className="flex flex-col gap-4">
-          {project?.images && project.images.length > 0 ? (
-            <div>
-              <Swiper
-                modules={[Navigation, Pagination, Thumbs]}
-                navigation
-                pagination={{ clickable: true, type: 'fraction' }}
-                thumbs={{ swiper: thumbsSwiper }}
-                spaceBetween={20}
-                slidesPerView={1}
-                className="h-fit w-full"
-              >
-                {project.images.map((image, index) => (
-                  <SwiperSlide key={index}>
+        {project?.images && project.images.length > 0 ? (
+          <div>
+            <Swiper
+              modules={[Navigation, Pagination, Thumbs, Zoom]}
+              navigation
+              pagination={{ clickable: true, type: "fraction" }}
+              thumbs={{ swiper: thumbsSwiper }}
+              zoom
+              spaceBetween={20}
+              slidesPerView={1}
+              className="h-fit w-full"
+            >
+              {project.images.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className="swiper-zoom-container"> {/* Contenedor para zoom */}
                     <img
                       src={image}
                       alt={`Slide ${index + 1}`}
                       className="w-full h-full rounded-lg"
                     />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <Swiper
-                modules={[Thumbs]}
-                onSwiper={setThumbsSwiper}
-                spaceBetween={10}
-                slidesPerView={5}
-                className="mt-4"
-              >
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <Swiper
+              modules={[Thumbs]}
+              onSwiper={setThumbsSwiper}
+              spaceBetween={10}
+              slidesPerView={5}
+              className="mt-4"
+            >
               {project.images.map((image, index) => (
                 <SwiperSlide key={index}>
                   <img
@@ -73,11 +76,11 @@ export default function PropertyPage({
                   />
                 </SwiperSlide>
               ))}
-              </Swiper>
+            </Swiper>
           </div>
           ) : (
             <p>No hay imágenes disponibles para este proyecto.</p>
-          )}          
+          )}        
           <div className="hidden md:inline bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
             <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">Descripción</h2>
             <div
