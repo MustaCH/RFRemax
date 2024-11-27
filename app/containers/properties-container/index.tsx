@@ -13,7 +13,7 @@ export const PropertiesContainer = () => {
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                     {
                         projects.map((p, index) => (
-                            <PropertyCard key={index} id={p.id} title={p.title} price={p.price} expenses={p.expenses} image={p.images[0]} location={p.location}  />
+                            <PropertyCard key={index} id={p.id} title={p.title} operation={p.operation} price={p.price} expenses={p.expenses} image={p.images[0]} location={p.location}  />
                         ))
                     }
                 </div>
