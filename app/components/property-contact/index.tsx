@@ -18,14 +18,14 @@ export const PropertyConctact: FC<PropertyConctactProps> = ({project}) => {
           <p>Romina Frola | Agente Inmobiliario</p>
         </div>
         <div className="text-3xl flex gap-4 items-center">
-          <a>
+          <a target="_blank" href={`https://api.whatsapp.com/send/?phone=%2B5491158942180&text=Hola%2C+quisiera+que+me+contactes+para+obtener+m%C3%A1s+informaci%C3%B3n+sobre+${project?.title}&type=phone_number&app_absent=0`}>
             <FaWhatsapp/>
           </a>
-          <a>
+          <a href={`mailto:rfrola@remax.com.ar?Subject=Consulta%20por%20${project?.title}`}>
             <MdOutlineEmail/>
           </a>
           <a>
-            <FiPhone />
+            <FiPhone href="tel:+5491150193079"/>
           </a>
         </div>
       </div>
