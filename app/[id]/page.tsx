@@ -12,6 +12,9 @@ import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { ring } from 'ldrs'
+
+ring.register()
 
 export default function PropertyPage({
   params,
@@ -50,7 +53,7 @@ export default function PropertyPage({
             >
               {project.images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <div className="swiper-zoom-container"> {/* Contenedor para zoom */}
+                  <div className="swiper-zoom-container">
                     <img
                       src={image}
                       alt={`Slide ${index + 1}`}
@@ -79,7 +82,13 @@ export default function PropertyPage({
             </Swiper>
           </div>
           ) : (
-            <p>No hay imágenes disponibles para este proyecto.</p>
+            <l-ring
+              size="40"
+              stroke="5"
+              bg-opacity="0"
+              speed="2"
+              color="black" 
+            ></l-ring>
           )}        
           <div className="hidden md:inline bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
             <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">Descripción</h2>
