@@ -12,7 +12,7 @@ export const Footer = () => {
                 <div>
                     <ul className='flex md:flex-col gap-4 md:gap-1'>
                         {navlinks.map((link, index) => (
-                            <li key={index} className='uppercase text-sm'><a href={link.url}>{link.name}</a></li>
+                            <li key={index} className='uppercase text-xs md:text-sm'><a href={link.url}>{link.name}</a></li>
                         ))}
                     </ul>
                 </div>
