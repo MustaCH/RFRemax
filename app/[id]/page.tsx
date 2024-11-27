@@ -10,9 +10,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { IProjectType } from "../types";
-import { MdOutlineEmail} from "react-icons/md";
-import { FaWhatsapp } from "react-icons/fa";
-import { FiPhone } from "react-icons/fi";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
 
 export default function PropertyPage({
