@@ -78,7 +78,7 @@ export default function PropertyPage({
           ) : (
             <p>No hay imágenes disponibles para este proyecto.</p>
           )}          
-          <div className="hidden md:inline bg-white border border-[#B0BBC5] p-8 rounded-lg h-fit">
+          <div className="hidden md:inline bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
             <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">Descripción</h2>
             <div
               className={`overflow-hidden transition-all duration-1000 ${
@@ -99,7 +99,7 @@ export default function PropertyPage({
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-8 bg-white border border-[#B0BBC5] p-8 rounded-lg h-fit">
+          <div className="flex flex-col gap-8 bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
             <PropertyInfo project={project}/>
             <PropertySpecs project={project}/>
           </div>
