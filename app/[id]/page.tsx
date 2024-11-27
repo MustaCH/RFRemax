@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export default function PropertyPage({
   params,
@@ -19,11 +20,17 @@ export default function PropertyPage({
 }) {
   const [project, setProject] = useState<IProjectType | undefined>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+
 
   useEffect(() => {
     const foundProject = projects.find((project) => params.id === project.id);
     setProject(foundProject);
   }, [params.id]);
+
+  const toggleExpand = () => {
+    setIsExpanded((prev) => !prev);
+  };
 
   return (
     <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
@@ -71,8 +78,23 @@ export default function PropertyPage({
           ) : (
             <p>No hay imágenes disponibles para este proyecto.</p>
           )}          
-          <div className="hidden md:flex bg-white border border-[#B0BBC5] p-8 rounded-lg h-36 md:h-72 overflow-hidden">
-            <p className="w-full" dangerouslySetInnerHTML={{ __html: project?.description || '' }}/>
+          <div className="hidden md:inline bg-white border border-[#B0BBC5] p-8 rounded-lg h-fit">
+            <div
+              className={`overflow-hidden transition-all duration-1000 ${
+                isExpanded ? "max-h-full" : "max-h-48"
+              }`}
+            >
+              <p
+                className="w-full"
+                dangerouslySetInnerHTML={{ __html: project?.description || '' }}
+              />
+            </div>
+              <button
+                onClick={toggleExpand}
+                className="flex justify-center items-center gap-1 h-8 text-center z-50 w-full bg-gradient-to-t from-white to-transparent text-blue-500 hover:underline"
+              >
+                {isExpanded ? "Ver menos" : "Ver más"} {isExpanded ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              </button>
           </div>
         </div>
         <div className="flex flex-col gap-4">
@@ -80,8 +102,23 @@ export default function PropertyPage({
             <PropertyInfo project={project}/>
             <PropertySpecs project={project}/>
           </div>
-          <div className="flex md:hidden bg-white border border-[#B0BBC5] p-8 rounded-lg h-36 md:h-72 overflow-hidden">
-            <p className="w-full" dangerouslySetInnerHTML={{ __html: project?.description || '' }}/>
+          <div className="inline md:hidden bg-white border border-[#B0BBC5] p-8 rounded-lg">
+            <div
+              className={`overflow-hidden transition-all duration-1000 ${
+                isExpanded ? "max-h-full" : "max-h-40"
+              }`}
+            >
+              <p
+                className="w-full"
+                dangerouslySetInnerHTML={{ __html: project?.description || '' }}
+              />
+            </div>
+              <button
+                onClick={toggleExpand}
+                className="flex justify-center items-center gap-1 h-8 text-center z-50 w-full bg-gradient-to-t from-white to-transparent text-blue-500 hover:underline"
+              >
+                {isExpanded ? "Ver menos" : "Ver más"}  {isExpanded ? <IoIosArrowUp /> : <IoIosArrowDown />} 
+              </button>
           </div>
           <div>
             <PropertyContact project={project}/>
