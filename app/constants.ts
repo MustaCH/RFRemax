@@ -2,6 +2,42 @@ import { IProjectType } from "@/app/types";
 
 export const projects: IProjectType[] = [
     {
+        id: 'duplex-unico-barrio-parque',
+        title: 'Dúplex Único en Barrio Parque con Jacuzzi Privado',
+        description: "<h1>Dúplex Único en Barrio Parque con Jacuzzi Privado</h1><br/><h2>EXCLUSIVO DÚPLEX EN EL PRESTIGIOSO BARRIO PARQUE, DISEÑADO PARA QUIENES VALORAN EL CONFORT Y EL ESTILO EN CADA DETALLE.</h2><br/><p>La planta principal cuenta con una habitación equipada con un vestidor amplio y a medida, ideal para organizar todas tus pertenencias con total comodidad. Además, la cocina moderna y el living están integrados en un espacio abierto, perfecto para disfrutar de momentos de convivencia en un ambiente sofisticado.<br/> Un ambiente que actualmente funciona como vestidor adicional, puede adaptarse fácilmente como un práctico escritorio. Ambos espacios gozan de una hermosa vista abierta que permite apreciar la ciudad en todo su esplendor.</p><p> La planta alta, conectada por una escalera interna. Aquí, un espacioso ambiente invita al relax, equipado con una parrilla, comedor, living, y un gran jacuzzi para disfrutar de momentos de bienestar en total privacidad. Este nivel también cuenta con un toilette, y desde aquí se extiende una vista abierta que enmarca la ciudad, convirtiendo cada reunión o momento de relax en una experiencia única.</p><h2>Superficie ampliada y cerrada: más espacio, más comodidad.</h2><p>Este departamento ha sido reformado y cerrado en su totalidad, lo que ha permitido ampliar su espacio útil. Por esta razón, las medidas finales cubiertas no coinciden con las que figuran en la escritura. La propiedad ofrece un diseño funcional y cómodo, adaptado a las necesidades actuales.</p><br/><h2>MEDIDAS POR ESCRITURA:</h2><ul><li>Superficie cubierta: 97 M2</li><li>Superficie semicubierta: 10 M2</li><li>Superficie descubierta: 46 M2</li><br/><li>Las medidas son orientativas, las reales surgirán de la correspondiente escritura traslativa de dominio.</li></ul><br/><p>Contáctanos para más detalles sobre esta excelente oportunidad. Este dúplex representa la exclusividad en Barrio Parque, una propiedad única para quienes buscan un hogar que inspire en cada rincón.</p><br/><p><strong>Descubre cada detalle de este exclusivo dúplex en nuestro video. ¡No te pierdas la experiencia completa!</strong></p><br/><p><strong>¡Mudate a la vida que querés! Contactame para recibir toda la información y agendar una visita</strong></p>",
+        operation: {
+            type: 'SALE'
+        },
+        location: {
+            city: "Capital Federal",
+            hood: 'Palermo'
+        },
+        images: [''],
+        video: "",
+        price: {
+            currency: 'USD',
+            price: 1000000
+        },
+        expenses: {
+            currency: 'ARS',
+            price: 1719000
+        },
+        specifications: {
+            surface: {
+                surfaceTotal: 179,
+                surfaceCover: 97,
+                surfaceSemicover: 72
+            },
+            age: 34,
+            bathrooms: 1,
+            bedrooms: 1,
+            toilets: 1,
+            rooms: 2,
+            garage: 1,
+            floor: 2
+        }
+    },
+    {
         id: 'nave-a-estrenar-escobar',
         title: "Nave a estrenar en Plaza Industrial Escobar",
         description: "<b>NAVE A ESTRENAR EN PLAZA INDUSTRIAL ESCOBAR</b><br><p>¡Nave Industrial a Estrenar en Alquiler!</p><br><p>Ubicada estratégicamente con excelente acceso sobre la Ruta Panamericana km 57, Ramal Escobar, Loma Verde.</p><p>Esta diseñada para maximizar la eficiencia operativa. Su estilo modular permite adaptarla fácilmente a diversas industrias.</p><br><p>¡Lista para adaptarse a las necesidades de su negocio!</p><br><b>CARACTERÍSTICAS DESTACADAS:</b><br><ul><li>Espacios de Oficinas: Modernas y bien iluminadas perfectas para su equipo administrativo.</li><br><li>Cocinas y Comedor: Equipadas para el bienestar de su personal, permitiendo comidas cómodas y eficientes.</li><br><li>Baños: Instalaciones separadas para mujeres y hombres, diseñadas con comodidad y funcionalidad.</li><br><li>Vestuarios</li><br><li>Aire Acondicionado: Climatización en todos los ambientes para un entorno de trabajo agradable.</li><br></ul><h2>MEDIDAS:</h2><br><ul><li>Nave: 2.430 m2</li><li>Oficina: 121 m2</li><li>Playa para Maniobras: 903 m2</li><li>Estacionamiento: 110 m2</li><li>Las medidas son aproximadas</li><br></ul><br><p>Excelente Ubicación: Fácil acceso a vías principales y transporte facilitando la logística y conectividad.</p><br><p>No te pierdas la oportunidad de llevar tu negocio al siguiente nivel con esta nave industrial de primer nivel.</p><br><p>TE INVITO A VER EL VIDEO, NO TE LO PODES PERDER!!!</p><br><p>¡Contáctenos para más detalles y programar una visita!</p><br><h2>Contrato en dólares por 36 meses, Indexación Anual 5%</h2><br><p>USD 15.200 + IVA por mes</p><p>Expensas $ 350.000. Las expensas incluyen: seguridad las 24hs, mantenimiento de espacios comunes.</p><br><p>Impuestos Municipales $ 300.000</p><br><p>Estos montos son aproximados y varían mensualmente, de acuerdo a los gastos de cada mes.</p><br><h2>Anticipo:</h2><br><ul><li>1 Mes Adelantado</li><li>1 Mes de Depósito</li></ul>",
