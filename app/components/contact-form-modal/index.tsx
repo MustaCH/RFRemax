@@ -73,7 +73,7 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
           <div className="flex flex-col h-80 justify-center items-center text-center">
             <FaCheck className="text-green-500 text-5xl" />
             <p className="text-3xl font-semibold">¡Email enviado!</p>
-            <p className="text-xl">¡Muchas gracias! Pronto recibirás la información en tu bandeja de entrada</p>
+            <p className="text-lg">Pronto recibirás la información en tu bandeja de entrada</p>
           </div>
         ) : (
           <TemplateForm action={handleSubmit} isLoading={isLoading}/>
