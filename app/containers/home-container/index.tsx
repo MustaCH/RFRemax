@@ -18,7 +18,9 @@ export const HomeContainer = () => {
 
     return (
         <div>
-            <ContactFormModal errors={false}/>
+            {isModalOpen && (
+                    <ContactFormModal onClose={() => setModalOpen(false)} />
+                )}            
             <section>
                 <WelcomeBanner/>
             </section>
