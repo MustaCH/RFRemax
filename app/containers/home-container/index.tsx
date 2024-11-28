@@ -1,6 +1,4 @@
-'use client'
-
-import { ContactFormModal, WelcomeBanner } from "@/app/components";
+import { WelcomeBanner } from "@/app/components";
 import {PropertiesContainer, ContactContainer, WhoamiContainer} from "@/app/containers";
 import { useEffect, useState } from "react";
 
@@ -18,9 +16,6 @@ export const HomeContainer = () => {
 
     return (
         <div>
-            {isModalOpen && (
-                    <ContactFormModal onClose={() => setModalOpen(false)} />
-                )}            
             <section>
                 <WelcomeBanner/>
             </section>
