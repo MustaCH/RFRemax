@@ -9,7 +9,7 @@ import { IoClose, IoMenu } from 'react-icons/io5';
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const route = useRouter()
-    const pathname = route?.pathname
+    const pathname = route?.query.toString()
 
     const toggleMenu = () => {
         setIsOpen((prev) => !prev);
@@ -18,14 +18,14 @@ export const Navbar = () => {
   return (
     <>        
         <div className="h-16 md:h-20"></div>  
-        <nav className={`flex justify-between items-center px-12 py-2 ${!isOpen ? 'bg-[#B0BBC520]' : 'bg-[#E8E7E5]'} border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md z-50`}>
+        <nav className={`flex justify-between items-center px-12 py-2 ${!isOpen ? 'bg-[#B0BBC520]' : 'bg-[#E8E7E5]'} transition-all duration-300 border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md z-50`}>
             <Link href={'/'}>
                 <img src="logo.png" alt="logo-rf" className='w-12 md:w-16' />
             </Link>
             <div>
                 <ul className='hidden md:flex gap-8'>
                     {navlinks.map((link, index) => (
-                        <li key={index}><Link className={!pathname?.includes(link.url) ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={link.url}>{link.name}</Link></li>
+                        <li key={index}><Link className={pathname !== link.url ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={link.url}>{link.name}</Link></li>
                     ))}
                 </ul>
                 <div className='md:hidden flex flex-col items-center'>
@@ -37,7 +37,7 @@ export const Navbar = () => {
                         )}
                     </button>
                     <aside
-                        className={`fixed top-[-0.5rem] right-0 h-full w-2/4 max-w-xs bg-[#E8E7E5] transform ${
+                        className={`fixed top-[-0.5rem] right-0 h-full w-2/4 max-w-xs transform ${
                         isOpen ? 'translate-x-0' : 'translate-x-full'
                         } transition-transform duration-300 ease-in-out`}
                     >
