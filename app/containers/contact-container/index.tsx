@@ -2,7 +2,7 @@ import { ContactCard } from "@/app/components";
 
 export const ContactContainer = () => {
     return (
-        <div className="flex justify-center items-center p-20">
+        <div className="flex justify-center items-center py-20 px-8 md:p-20">
             <ContactCard/>
         </div>
     )
