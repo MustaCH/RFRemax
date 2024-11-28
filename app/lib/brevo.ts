@@ -47,7 +47,7 @@ export async function sendTemplate({name, email, content}: TemplateParams) {
                 </tr>
                 <tr>
                     <td style="padding: 20px; text-align: center; background-color: #E8E7E5;">
-                    <h1 style="font-size: 24px; color: #333333; margin: 0;">Hola, ${name}!</h1>
+                    <h3 style="font-size: 24px; color: #333333; margin: 0;">Hola, ${name}!</h3>
                     </td>
                 </tr>
                 <tr>

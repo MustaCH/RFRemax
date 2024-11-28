@@ -12,7 +12,10 @@ export const WhoamiCard = () => {
                     transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.<br/><br/>
                     Mi pasión por el rubro nació de mi interés en ayudar a las personas a encontrar su hogar perfecto, 
                     brindando un servicio que combina ética, compromiso y dedicación. Como Personal Shopper Inmobiliario, 
-                    me encargo de realizar búsquedas específicas, asegurando una experiencia segura y sin complicaciones.
+                    me encargo de realizar búsquedas específicas, asegurando una experiencia segura y sin complicaciones.<br/><br/>
+                    Como emprendedora, me definen la perseverancia y el deseo constante de superarme. Mi misión es crecer 
+                    profesionalmente, fidelizar a mis clientes y ser reconocida por la excelencia en mi trabajo, construyendo 
+                    relaciones basadas en la confianza y el respeto.
                 </p>
             </div>
         </div>

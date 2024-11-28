@@ -1,14 +1,31 @@
 import { IProjectType } from "@/app/types";
 
-export const exclusiveContent: string = `<p style="font-size: 16px; color: #555555; line-height: 1.5; margin: 0;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra nunc vitae augue tincidunt, ut pulvinar nunc bibendum. Fusce vehicula, turpis ut dignissim viverra.
-              </p>
-              <p style="font-size: 16px; color: #555555; line-height: 1.5; margin-top: 10px;">
-                Aliquam a sollicitudin nulla, in tempor nisi. Cras eget hendrerit ipsum. Pellentesque consectetur, nunc ut tincidunt posuere, risus est pharetra lacus, sit amet interdum.
-              </p>
-              <p style="font-size: 16px; color: #555555; line-height: 1.5; margin-top: 10px;">
-                Etiam a libero at metus consectetur efficitur. Suspendisse vitae urna id nisi malesuada tincidunt non ac sem. Proin elementum libero vel dui bibendum ultricies.
-              </p>`
+export const exclusiveContent: string = `
+  <p style="font-size: 18px; color: #555555; line-height: 1.5; margin: 0;">
+    <strong>Éstas son las últimas noticias del mercado inmobiliario y cómo impactan las nuevas medidas económicas:</strong>
+  </p>
+  <p style="font-size: 16px; color: #555555; line-height: 1.5; margin-top: 10px;">
+    Como asesora comprometida, mi objetivo es brindarte información relevante que te ayude a tomar decisiones inteligentes en este sector dinámico y lleno de oportunidades.
+  </p>
+  <ul style="font-size: 16px; color: #555555; line-height: 1.5; margin-top: 10px; padding-left: 20px;">
+    <li style="margin-bottom: 10px;">
+      <strong>El regreso de los créditos hipotecarios:</strong><br/>
+      La reactivación de los créditos hipotecarios ya es una realidad en Argentina. En septiembre, se formalizaron 705 escrituras con hipoteca en CABA, cifra que aumentó a 944 en octubre. Este crecimiento muestra que más compradores confían en esta herramienta de financiamiento para alcanzar el sueño de la casa propia.
+    </li>
+    <li style="margin-bottom: 10px;">
+      <strong>Blanqueo de capitales una oportunidad clave:</strong><br/>
+      El régimen de blanqueo de capitales sigue impulsando la transparencia en el sector. Con más de 23.000 millones de dólares declarados en su primera etapa, este sistema continúa hasta mayo del 2025. Es una medida que dinamiza el mercado y abre nuevas posibilidades tanto para compradores como para inversores.
+    </li>
+    <li>
+      <strong>Hipotecas divisibles para proyectos inmobiliarios:</strong><br/>
+      El reciente Decreto 1017/2024 permite la creación de hipotecas divisibles en proyectos inmobiliarios. Aunque aún está pendiente su reglamentación, esta medida promete transformar la dinámica de los desarrollos, facilitando la división en propiedad horizontal y promoviendo un mercado más ágil y accesible.
+    </li>
+  </ul>
+  <p style="font-size: 12px; color: #555555; line-height: 1.5; margin-top: 10px;">
+    El objetivo de esta información es mantenerte informado y acercarte herramientas y conocimientos para que puedas aprovechar las oportunidades que ofrece el mercado. Mi compromiso es acompañarte en cada paso, ya sea como comprador, vendedor o inversor.
+  </p>
+`;
+
 
 export const projects: IProjectType[] = [
     {
