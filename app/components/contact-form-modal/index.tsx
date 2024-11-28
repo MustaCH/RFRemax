@@ -51,7 +51,7 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className="relative w-96 md:w-full max-w-lg bg-white rounded-lg shadow-lg p-6"
+        className="relative w-80 md:w-full max-w-lg bg-white rounded-lg shadow-lg p-6"
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0.9 }}
