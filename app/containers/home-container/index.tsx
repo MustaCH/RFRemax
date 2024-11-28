@@ -1,10 +1,11 @@
-import { WelcomeBanner } from "@/app/components";
+import { ContactFormModal, WelcomeBanner } from "@/app/components";
 import {PropertiesContainer, ContactContainer, WhoamiContainer} from "@/app/containers";
 
 
 export const HomeContainer = () => {
     return (
         <div>
+            <ContactFormModal errors={false}/>
             <section>
                 <WelcomeBanner/>
             </section>
