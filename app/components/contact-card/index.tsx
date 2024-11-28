@@ -3,7 +3,6 @@
 import { ContactButton } from "./contact-button";
 import { contactItems } from "./constants";
 import { handleForm } from "@/app/action";
-import { useState } from "react";
 import ContactForm from "../contact-form";
 
 export const ContactCard = () => {
