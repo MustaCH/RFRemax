@@ -9,10 +9,10 @@ export const HomeContainer = () => {
     const [isModalOpen, setModalOpen] = useState(true);
 
     useEffect(() => {
-        const hasVisited = localStorage.getItem("hasVisited");
+        const hasVisited = sessionStorage.getItem("hasVisited");
         if (!hasVisited) {
           setModalOpen(true); 
-          localStorage.setItem("hasVisited", "true"); 
+          sessionStorage.setItem("hasVisited", "true"); 
         }
       }, []);
 
