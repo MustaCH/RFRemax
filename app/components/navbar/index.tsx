@@ -9,7 +9,7 @@ import { IoClose, IoMenu } from 'react-icons/io5';
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const route = useRouter()
-    const pathname = route?.query.toString()
+    const query = route?.query.toString()
 
     const toggleMenu = () => {
         setIsOpen((prev) => !prev);
@@ -25,7 +25,7 @@ export const Navbar = () => {
             <div>
                 <ul className='hidden md:flex gap-8'>
                     {navlinks.map((link, index) => (
-                        <li key={index}><Link className={pathname !== link.url ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={link.url}>{link.name}</Link></li>
+                        <li key={index}><Link className={query !== link.url ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={link.url}>{link.name}</Link></li>
                     ))}
                 </ul>
                 <div className='md:hidden flex flex-col items-center'>
@@ -48,7 +48,7 @@ export const Navbar = () => {
                                     href={link.url}
                                     onClick={() => setIsOpen(false)}
                                     className={
-                                    !pathname?.includes(link.url)
+                                        query !== link.url
                                         ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out'
                                         : 'uppercase underline'
                                     }
