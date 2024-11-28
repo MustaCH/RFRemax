@@ -1,5 +1,15 @@
 import { IProjectType } from "@/app/types";
 
+export const exclusiveContent: string = `<p style="font-size: 16px; color: #555555; line-height: 1.5; margin: 0;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra nunc vitae augue tincidunt, ut pulvinar nunc bibendum. Fusce vehicula, turpis ut dignissim viverra.
+              </p>
+              <p style="font-size: 16px; color: #555555; line-height: 1.5; margin-top: 10px;">
+                Aliquam a sollicitudin nulla, in tempor nisi. Cras eget hendrerit ipsum. Pellentesque consectetur, nunc ut tincidunt posuere, risus est pharetra lacus, sit amet interdum.
+              </p>
+              <p style="font-size: 16px; color: #555555; line-height: 1.5; margin-top: 10px;">
+                Etiam a libero at metus consectetur efficitur. Suspendisse vitae urna id nisi malesuada tincidunt non ac sem. Proin elementum libero vel dui bibendum ultricies.
+              </p>`
+
 export const projects: IProjectType[] = [
     {
         id: 'duplex-unico-barrio-parque',

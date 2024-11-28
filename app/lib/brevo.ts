@@ -20,6 +20,7 @@ interface EmailParams {
 interface TemplateParams {
     name: string;
     email: string;
+    content: string;
 }
 
 export async function sendEmail({name, phone, email, content, subject}: EmailParams) {
@@ -31,11 +32,32 @@ export async function sendEmail({name, phone, email, content, subject}: EmailPar
     await apiInstance.sendTransacEmail(smtpEmail)
 }
 
-export async function sendTemplate({name, email,}: TemplateParams) {
+export async function sendTemplate({name, email, content}: TemplateParams) {
     smtpEmail.subject = 'Información exclusiva'
     smtpEmail.to = [{email: email, name: name}]
-    smtpEmail.htmlContent = `<html><body><h1>Hola ${name}</h1><p>sdklfhskldfhslkdfhskdlf</p></body></html>`
     smtpEmail.sender = {name: 'Romina Frola', email: "polettiignacio7@gmail.com"}
+    smtpEmail.htmlContent = `
+            <html>
+            <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #E8E7E5;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; margin: 0 auto; border-collapse: collapse;">
+                <tr>
+                    <td>
+                    <img src="https://res.cloudinary.com/dfuru6l6d/image/upload/v1732221175/bannerwelcome_liywcy.jpg" alt="Header Image" style="width: 100%; max-height: 200px; display: block; object-fit: cover;">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: center; background-color: #E8E7E5;">
+                    <h1 style="font-size: 24px; color: #333333; margin: 0;">Hola, ${name}!</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: left; background-color: #E8E7E5;">
+                    ${content}
+                    </td>
+                </tr>
+                </table>
+            </body>
+            </html>`;
 
     await apiInstance.sendTransacEmail(smtpEmail)
 }

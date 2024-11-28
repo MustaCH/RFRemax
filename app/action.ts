@@ -1,5 +1,6 @@
 'use server'
 
+import { exclusiveContent } from "./constants"
 import { sendEmail, sendTemplate } from "./lib/brevo"
 
 export async function handleForm(formData: FormData) {
@@ -27,5 +28,6 @@ export async function handleForm(formData: FormData) {
     await sendTemplate({
       name: name as string, 
       email: email as string, 
+      content: exclusiveContent
     })
   }
