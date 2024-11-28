@@ -1,25 +1,29 @@
+'use client'
 
 import { handleForm } from "@/app/action";
 import { FC } from "react";
 
 interface ContactFormModalProps {
-    errors: boolean,
+  onClose: () => void;
 }
 
-export const ContactFormModal: FC<ContactFormModalProps> = ({errors}) => {
-    // if (!isOpen) return null;
+export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
 
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
 
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onClick={handleBackdropClick}>
         <div className="relative w-full max-w-lg bg-white rounded-lg shadow-lg p-6">
-          {/* Close Button */}
-          {/* <button
-            className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-            onClick={() => {}}
-          >
-            &times;
-          </button> */}
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+        >
+          ✖
+        </button>
         <div className="relative flex flex-col gap-1 text-center mb-4">
             <h2 className="text-xl font-semibold">Contactame</h2>
             <p>Enviame tu mensaje</p>

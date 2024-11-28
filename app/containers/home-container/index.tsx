@@ -1,11 +1,26 @@
+'use client'
+
 import { ContactFormModal, WelcomeBanner } from "@/app/components";
 import {PropertiesContainer, ContactContainer, WhoamiContainer} from "@/app/containers";
+import { useEffect, useState } from "react";
 
 
 export const HomeContainer = () => {
+    const [isModalOpen, setModalOpen] = useState(true);
+
+    useEffect(() => {
+        const hasVisited = localStorage.getItem("hasVisited");
+        if (!hasVisited) {
+          setModalOpen(true); 
+          localStorage.setItem("hasVisited", "true"); 
+        }
+      }, []);
+
     return (
         <div>
-            <ContactFormModal errors={false}/>
+            {isModalOpen && (
+                    <ContactFormModal onClose={() => setModalOpen(false)} />
+                )}            
             <section>
                 <WelcomeBanner/>
             </section>
