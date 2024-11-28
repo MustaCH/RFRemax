@@ -1,6 +1,6 @@
 'use client';
 
-import { handleForm, handleTemplate } from "@/app/action";
+import { handleTemplate } from "@/app/action";
 import { FC, useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
