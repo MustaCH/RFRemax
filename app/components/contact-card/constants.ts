@@ -13,7 +13,7 @@ type ContactItemProp = {
 export const contactItems: ContactItemProp[] = [
     {
         name: 'whatsapp',
-        value: '+54 91158942180',
+        value: '+5491158942180',
         url: 'https://api.whatsapp.com/send/?phone=%2B5491158942180&text=Hola%2C+quisiera+que+me+contactes+para+obtener+m%C3%A1s+informaci%C3%B3n+sobre+algunas+de+tus+propiedades+disponibles&type=phone_number&app_absent=0',
         icon: FaWhatsapp,
 
