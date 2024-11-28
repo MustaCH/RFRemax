@@ -14,7 +14,7 @@ interface ContactFormModalProps {
 export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
   const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { isModalOpen, openModal, closeModal } = useModal();
+  const { closeModal } = useModal();
 
   // const [isExiting, setIsExiting] = useState(false);
 
