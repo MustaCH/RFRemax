@@ -19,9 +19,9 @@ interface Params {
 
 export async function sendEmail({name, phone, email, content, subject}: Params) {
     smtpEmail.subject = subject
-    smtpEmail.to = [{email: "polettiignacio7@gmail.com", name: "Romina Frola"}]
+    smtpEmail.to = [{email: "flaneros25@gmail.com", name: name}]
     smtpEmail.htmlContent = `<html><body><h4>${subject}</h4><p>${content}</p><br/><p>Nombre: ${name}<br/>Teléfono: ${phone}<br/>Correo: ${email}</p></body></html>`
-    smtpEmail.sender = {name: name, email: email}
+    smtpEmail.sender = {name: name, email: "polettiignacio7@gmail.com"}
 
     await apiInstance.sendTransacEmail(smtpEmail)
 }

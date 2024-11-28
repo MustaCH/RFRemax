@@ -11,7 +11,8 @@ interface ContactFormModalProps {
 }
 
 export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   // const [isExiting, setIsExiting] = useState(false);
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -25,9 +26,10 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
     setTimeout(onClose, 300); 
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (formData: FormData) => {
+    setIsLoading(true)
     try {
-      await handleForm;
+      await handleForm(formData);
       setIsFormSubmitted(true);
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
@@ -74,7 +76,7 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
             <p className="text-xl">¡Muchas gracias! Pronto me pondré en contacto</p>
           </div>
         ) : (
-          <ContactForm Action={handleSubmit} />
+          <ContactForm action={handleSubmit} isLoading={isLoading}/>
         )}
       </motion.div>
     </motion.div>
