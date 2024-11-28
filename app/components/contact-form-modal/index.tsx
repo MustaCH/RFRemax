@@ -5,6 +5,7 @@ import { FC, useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
 import TemplateForm from "../template-form";
+import { useModal } from "@/app/context";
 
 interface ContactFormModalProps {
   onClose: () => void;
@@ -12,7 +13,9 @@ interface ContactFormModalProps {
 
 export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
   const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { isModalOpen, openModal, closeModal } = useModal();
+
   // const [isExiting, setIsExiting] = useState(false);
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -24,6 +27,7 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
   const startExitAnimation = () => {
     // setIsExiting(true);
     setTimeout(onClose, 300); 
+    closeModal()
   };
 
   const handleSubmit = async (formData: FormData) => {
@@ -37,6 +41,7 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
     } finally {
       setTimeout(() => {
         onClose();
+        closeModal();
       }, 3000); 
     }
   };

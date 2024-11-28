@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar, Footer } from "./components";
+import { ModalProvider } from "./context";
 
 const outfitFont = localFont({
   src: [
@@ -32,9 +33,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${outfitFont.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ModalProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );
