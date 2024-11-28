@@ -7,12 +7,12 @@ import { useState } from "react";
 import ContactForm from "../contact-form";
 
 export const ContactCard = () => {
-    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+    // const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
     const handleSubmit = async () => {
         try {
           await handleForm;
-          setIsFormSubmitted(true);
+        //   setIsFormSubmitted(true);
         } catch (error) {
           console.error("Error al enviar el formulario:", error);
           alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");

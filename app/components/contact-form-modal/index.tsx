@@ -12,7 +12,7 @@ interface ContactFormModalProps {
 
 export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [isExiting, setIsExiting] = useState(false);
+  // const [isExiting, setIsExiting] = useState(false);
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
@@ -21,7 +21,7 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
   };
 
   const startExitAnimation = () => {
-    setIsExiting(true);
+    // setIsExiting(true);
     setTimeout(onClose, 300); 
   };
 
