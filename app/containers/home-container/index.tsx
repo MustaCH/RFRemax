@@ -1,3 +1,5 @@
+'use client'
+
 import { ContactFormModal, WelcomeBanner } from "@/app/components";
 import {PropertiesContainer, ContactContainer, WhoamiContainer} from "@/app/containers";
 import { useEffect, useState } from "react";
