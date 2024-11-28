@@ -2,7 +2,6 @@ import { FC } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { div } from "framer-motion/client";
 
 interface ContactFormProps {
   action: (formData: FormData) => void;
