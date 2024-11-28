@@ -1,6 +1,6 @@
 'use server'
 
-import { sendEmail } from "./lib/brevo"
+import { sendEmail, sendTemplate } from "./lib/brevo"
 
 export async function handleForm(formData: FormData) {
 
@@ -16,5 +16,16 @@ export async function handleForm(formData: FormData) {
       email: email as string, 
       content: content as string, 
       subject: subject as string
+    })
+  }
+
+  export async function handleTemplate(formData: FormData) {
+
+    const email = formData.get('email')
+    const name = formData.get('to_name')
+
+    await sendTemplate({
+      name: name as string, 
+      email: email as string, 
     })
   }

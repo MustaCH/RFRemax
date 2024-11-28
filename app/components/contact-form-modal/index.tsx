@@ -1,10 +1,10 @@
 'use client';
 
-import { handleForm } from "@/app/action";
+import { handleForm, handleTemplate } from "@/app/action";
 import { FC, useState } from "react";
-import ContactForm from "../contact-form";
 import { FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
+import TemplateForm from "../template-form";
 
 interface ContactFormModalProps {
   onClose: () => void;
@@ -29,7 +29,7 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
   const handleSubmit = async (formData: FormData) => {
     setIsLoading(true)
     try {
-      await handleForm(formData);
+      await handleTemplate(formData);
       setIsFormSubmitted(true);
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
@@ -65,18 +65,18 @@ export const ContactFormModal: FC<ContactFormModalProps> = ({ onClose }) => {
         </button>
         {!isFormSubmitted && (
           <div className="relative flex flex-col gap-1 text-center mb-4">
-            <h2 className="text-3xl font-semibold">¿Tenés alguna consulta?</h2>
-            <p className="text-xl">Enviame tu mensaje</p>
+            <h2 className="text-3xl font-semibold">Recibe información exclusiva</h2>
+            <p className="text-xl">Ingresa tus datos</p>
           </div>
         )}
         {isFormSubmitted ? (
           <div className="flex flex-col h-80 justify-center items-center text-center">
             <FaCheck className="text-green-500 text-5xl" />
             <p className="text-3xl font-semibold">¡Email enviado!</p>
-            <p className="text-xl">¡Muchas gracias! Pronto me pondré en contacto</p>
+            <p className="text-xl">¡Muchas gracias! Pronto recibirás la información en tu bandeja de entrada</p>
           </div>
         ) : (
-          <ContactForm action={handleSubmit} isLoading={isLoading}/>
+          <TemplateForm action={handleSubmit} isLoading={isLoading}/>
         )}
       </motion.div>
     </motion.div>
