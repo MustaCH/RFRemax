@@ -25,9 +25,9 @@ interface TemplateParams {
 
 export async function sendEmail({name, phone, email, content, subject}: EmailParams) {
     smtpEmail.subject = subject
-    smtpEmail.to = [{email: "flaneros25@gmail.com", name: name}]
+    smtpEmail.to = [{email: "rfrola@remax.com.ar", name: name}]
     smtpEmail.htmlContent = `<html><body><h4>${subject}</h4><p>${content}</p><br/><p>Nombre: ${name}<br/>Teléfono: ${phone}<br/>Correo: ${email}</p></body></html>`
-    smtpEmail.sender = {name: name, email: "polettiignacio7@gmail.com"}
+    smtpEmail.sender = {name: name, email: process.env.NEXT_BREVO_TO_EMAIL}
 
     await apiInstance.sendTransacEmail(smtpEmail)
 }
@@ -35,7 +35,7 @@ export async function sendEmail({name, phone, email, content, subject}: EmailPar
 export async function sendTemplate({name, email, content}: TemplateParams) {
     smtpEmail.subject = 'Información exclusiva'
     smtpEmail.to = [{email: email, name: name}]
-    smtpEmail.sender = {name: 'Romina Frola', email: "polettiignacio7@gmail.com"}
+    smtpEmail.sender = {name: 'Romina Frola', email: process.env.NEXT_BREVO_TO_EMAIL}
     smtpEmail.htmlContent = `
             <html>
             <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #E8E7E5;">
