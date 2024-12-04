@@ -12,7 +12,7 @@ interface PropertyPageProps {
 export const PropertySpecs: FC<PropertyPageProps> = ({project}) => {
     return (
         <div className="flex flex-col gap-8">
-                  <h3 className="text-2xl underline decoration-[#712536] underline-offset-8">Características</h3>
+                  <h3 className="text-2xl underline decoration-[#4088e3] underline-offset-8">Características</h3>
                   <hr />
                   <div className="grid grid-cols-2 gap-4">
                     {project?.specifications?.surface?.surfaceTotal && 

@@ -18,9 +18,9 @@ export const Navbar = () => {
   return (
     <>        
         <div className="h-16 md:h-20"></div>  
-        <nav className={`flex justify-between items-center px-12 py-2 ${!isOpen ? 'bg-[#B0BBC520]' : 'bg-[#E8E7E5]'} transition-all duration-300 border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md z-50`}>
-            <Link href={'/'}>
-                <img src="logo.png" alt="logo-rf" className='w-12 md:w-16' />
+        <nav className={`flex justify-between items-center px-4 md:px-12 py-2 ${!isOpen ? 'bg-[#B0BBC520]' : 'bg-[#E8E7E5]'} transition-all duration-300 border-b border-[#B0BBC540] fixed top-0 w-full h-fit backdrop-blur-md z-50`}>
+            <Link href={'/'} className='text-lime-500'>
+                <img src="logo.png" alt="logo-rf" className='w-20 p-3 md:w-28 md:p-4' />
             </Link>
             <div>
                 <ul className='hidden md:flex gap-8'>

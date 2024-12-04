@@ -28,7 +28,7 @@ export const ContactCard = () => {
         <div className="relative flex flex-col justify-center items-center gap-8 p-4 md:p-8 w-full md:w-[60%] bg-white border-2 border-[#898D9F] shadow-lg rounded-lg">
             <div>
                 <h3 className="text-2xl font-semibold uppercase">Contacto</h3>
-                <hr className="border-[#712536]"/>
+                <hr className="border-[#4088e3]"/>
             </div>
             <div className="flex flex-col gap-8 w-full">
                 <div className="grid grid-cols-4 gap-4 md:gap-4">
