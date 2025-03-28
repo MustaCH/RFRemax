@@ -484,9 +484,9 @@ export const projects: IProjectType[] = [
     },
     images: [
       "https://res.cloudinary.com/dfuru6l6d/image/upload/v1743172042/1_sgylle.webp",
-      "https://res.cloudinary.com/dfuru6l6d/image/upload/v1743172042/2_drxjiy.webp",
-      "https://res.cloudinary.com/dfuru6l6d/image/upload/v1743172043/3_yh5chp.webp",
-      "https://res.cloudinary.com/dfuru6l6d/image/upload/v1743172042/4_a6j3py.webp",
+      "https://res.cloudinary.com/dfuru6l6d/image/upload/c_fill,ar_4:3/v1743172042/2_drxjiy.webp",
+      "https://res.cloudinary.com/dfuru6l6d/image/upload/c_fill,ar_4:3/v1743172043/3_yh5chp.webp",
+      "https://res.cloudinary.com/dfuru6l6d/image/upload/c_fill,ar_4:3/v1743172042/4_a6j3py.webp",
       "https://res.cloudinary.com/dfuru6l6d/image/upload/v1743172042/5_wgmwhw.webp",
       "https://res.cloudinary.com/dfuru6l6d/image/upload/v1743172043/6_feeyh2.webp",
       "https://res.cloudinary.com/dfuru6l6d/image/upload/v1743172043/7_fao6ql.webp",
