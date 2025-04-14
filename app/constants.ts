@@ -29,6 +29,7 @@ export const projects: IProjectType[] = [
     operation: {
       type: "RENT",
     },
+    availability: false,
     location: {
       city: "Capital Federal",
       hood: "Colegiales",
@@ -36,7 +37,6 @@ export const projects: IProjectType[] = [
       number: "2900",
     },
     images: [
-      "https://res.cloudinary.com/dfuru6l6d/image/upload/v1741712653/Dise%C3%B1o_sin_t%C3%ADtulo_lzmgfq.png",
       "https://res.cloudinary.com/dfuru6l6d/image/upload/v1736897693/01-cb020b4f-1fde-4dab-b704-c15de09c4819_ksix4y.webp",
       "https://res.cloudinary.com/dfuru6l6d/image/upload/v1736897693/02-763ee0dc-6397-4dd4-a5bd-9216c244d78b_qcbu4n.webp",
       "https://res.cloudinary.com/dfuru6l6d/image/upload/v1736897693/03-31be9bb7-4d98-4e3d-b1af-9f4c2c7acdc9_dqhsk4.webp",
@@ -140,6 +140,7 @@ export const projects: IProjectType[] = [
     operation: {
       type: "SALE",
     },
+    availability: true,
     location: {
       city: "Capital Federal",
       hood: "Palermo",
@@ -212,6 +213,7 @@ export const projects: IProjectType[] = [
     operation: {
       type: "RENT",
     },
+    availability: true,
     location: {
       province: "Buenos Aires",
       city: "Belén de Escobar",
@@ -289,6 +291,7 @@ export const projects: IProjectType[] = [
     operation: {
       type: "SALE",
     },
+    availability: true,
     location: {
       city: "Capital Federal",
       hood: "Palermo",
@@ -384,6 +387,7 @@ export const projects: IProjectType[] = [
     operation: {
       type: "SALE",
     },
+    availability: true,
     location: {
       city: "Capital Federal",
       hood: "Puerto Madero",
@@ -476,6 +480,7 @@ export const projects: IProjectType[] = [
     operation: {
       type: "SALE",
     },
+    availability: true,
     location: {
       city: "Capital Federal",
       hood: "Puerto Madero",
