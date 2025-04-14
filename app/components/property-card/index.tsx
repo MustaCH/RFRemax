@@ -47,7 +47,7 @@ export const PropertyCard: FC<PropertyCardProps> = ({
         <div className="border border-[#B0BBC5] rounded-lg p-1 w-fit text-xs">
           <p>{operation.type === "SALE" ? "Venta" : "Alquiler"}</p>
         </div>
-        <div>
+        <div className="h-12">
           <PriceFormatter className="font-semibold text-lg" value={price} />
           {expenses && (
             <PriceFormatter
