@@ -12,18 +12,27 @@ export type PriceType = {
 export type LocationType = {
   province?: string;
   city?: string;
-  hood?: string; // Barrio
+  hood?: string;
   street?: string;
   number?: string;
+};
+
+export type SurfaceType = {
+  surfaceTotal?: number;
+  surfaceCover?: number;
+  surfaceSemiCover?: number;
+  surfaceLand?: number;
 };
 
 export type SpecificationsType = {
   age?: number;
   bathrooms?: number;
+  bedrooms?: number;
   toilets?: number;
   rooms?: number;
   garage?: number;
   floor?: number;
+  professional?: boolean;
 };
 
 export interface IProjectType {
@@ -36,5 +45,6 @@ export interface IProjectType {
   price: PriceType;
   expenses?: PriceType;
   location?: LocationType;
+  surface?: SurfaceType;
   specifications?: SpecificationsType;
 }

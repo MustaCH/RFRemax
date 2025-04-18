@@ -5,11 +5,24 @@ import { FC } from "react";
 interface PropertyInfoProps {
   project?: IProjectType;
 }
+const BACITY = "Ciudad Autónoma de Buenos Aires";
 
 export const PropertyInfo: FC<PropertyInfoProps> = ({ project }) => {
   return (
-    <div className="flex flex-col gap-6">
-      <h1 className="text-xl md:text-3xl">{project?.title}</h1>
+    <section className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
+        <h1 className="text-xl md:text-3xl">{project?.title}</h1>
+        <div>
+          <h3>
+            {project?.location?.province !== BACITY &&
+              `${project?.location?.province} /`}{" "}
+            {project?.location?.city} / {project?.location?.hood}
+          </h3>
+          <p>
+            {project?.location?.street} {project?.location?.number}
+          </p>
+        </div>
+      </div>
       <div>
         {project?.availability === true ? (
           <div className="text-sm border border-[#B0BBC5] bg-[#3B4352] text-white py-1 px-2 w-fit rounded-lg mb-2">
@@ -33,7 +46,7 @@ export const PropertyInfo: FC<PropertyInfoProps> = ({ project }) => {
           />
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

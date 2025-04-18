@@ -16,6 +16,8 @@ interface PropertyCardProps {
   location?: LocationType;
 }
 
+const BACITY = "Ciudad Autónoma de Buenos Aires";
+
 export const PropertyCard: FC<PropertyCardProps> = ({
   image,
   operation,
@@ -29,7 +31,7 @@ export const PropertyCard: FC<PropertyCardProps> = ({
   return (
     <Link
       href={`${id}`}
-      className="shadow-md rounded-lg border-2 border-transparent hover:border-[#B0BBC5] duration-150 bg-white w-96"
+      className="shadow-md rounded-lg border-2 border-transparent hover:border-[#B0BBC5] duration-150 bg-white w-80"
     >
       <div
         style={{ backgroundImage: `url(${image})` }}
@@ -58,10 +60,10 @@ export const PropertyCard: FC<PropertyCardProps> = ({
           )}
         </div>
         <div>
-          <h3 className="text-xs md:text-sm">{title}</h3>
+          <h3 className="text-xs md:text-sm text-[#4088e3]">{title}</h3>
         </div>
-        <div className="flex gap-1 text-xs mt-4">
-          {location?.province && <p>{location?.province} /</p>}
+        <div className="flex gap-1 text-xs mt-4 opacity-75">
+          {location?.province !== BACITY && <p>{location?.province} /</p>}
           <p>
             {location?.city} {location?.hood && "/"}
           </p>

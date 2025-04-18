@@ -11,10 +11,10 @@ import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-// import { ring } from "ldrs";
+import { ring } from "ldrs";
 import { getPropertyById } from "../services";
 
-// ring.register();
+ring.register();
 
 export default function PropertyPage({ params }: { params: { id: string } }) {
   const [project, setProject] = useState<IProjectType | undefined>();
@@ -78,7 +78,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
                 zoom
                 spaceBetween={20}
                 slidesPerView={1}
-                className="h-[500px] w-full" // Altura fija de 500px
+                className="h-[500px] w-full"
               >
                 {project.images.map((image, index) => (
                   <SwiperSlide key={index}>
@@ -86,7 +86,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
                       <img
                         src={image}
                         alt={`Slide ${index + 1}`}
-                        className="w-full h-full rounded-lg object-contain" // Añadido object-contain
+                        className="w-full h-full rounded-lg object-contain"
                       />
                     </div>
                   </SwiperSlide>

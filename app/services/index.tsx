@@ -1,11 +1,8 @@
-// src/app/services/strapiService.ts
-
 import { IProjectType } from "../types";
 
 const API_URL =
   process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337";
 
-// Tipo que representa la estructura de respuesta de Strapi
 export interface StrapiResponse<T> {
   data: T[];
   meta: {
@@ -18,7 +15,6 @@ export interface StrapiResponse<T> {
   };
 }
 
-// Tipo para la estructura de propiedad que devuelve tu API
 export interface StrapiProperty {
   id: number;
   documentId: string;
@@ -44,10 +40,19 @@ export interface StrapiProperty {
     id: number;
     age: number;
     bathrooms: number;
+    bedrooms: number;
     toilets: number;
     rooms: number;
     garage: number;
     floor: number;
+    professional: boolean;
+  };
+  surface?: {
+    id: number;
+    surfaceTotal: number;
+    surfaceCover: number;
+    surfaceSemiCover: number;
+    surfaceLand: number;
   };
   location: {
     id: number;
@@ -59,17 +64,13 @@ export interface StrapiProperty {
   };
 }
 
-// Función para transformar la respuesta de Strapi a nuestro formato IProjectType
 const transformStrapiData = (strapiData: StrapiProperty): IProjectType => {
-  // Transformar las imágenes
   const images =
     strapiData.images &&
     strapiData.images.map((img: any) => {
-      // Asegúrate de usar la URL completa de la imagen
       return `${API_URL}${img.url}`;
     });
 
-  // Transformar la descripción de formato Rich Text a HTML
   let descriptionHtml = "";
   if (Array.isArray(strapiData.description)) {
     descriptionHtml = strapiData.description
@@ -83,13 +84,10 @@ const transformStrapiData = (strapiData: StrapiProperty): IProjectType => {
       .join("");
   }
 
-  // Crear el objeto de operación
   const operation = {
     type: strapiData.operation,
-    // Puedes agregar más campos según sea necesario
   };
 
-  // Transformar la ubicación
   const location = strapiData.location
     ? {
         province: strapiData.location.province,
@@ -100,15 +98,24 @@ const transformStrapiData = (strapiData: StrapiProperty): IProjectType => {
       }
     : undefined;
 
-  // Transformar las especificaciones
   const specs = strapiData.specifications
     ? {
         age: strapiData.specifications.age,
+        bedrooms: strapiData.specifications.bedrooms,
         bathrooms: strapiData.specifications.bathrooms,
         toilets: strapiData.specifications.toilets,
         rooms: strapiData.specifications.rooms,
         garage: strapiData.specifications.garage,
         floor: strapiData.specifications.floor,
+        professional: strapiData.specifications.professional,
+      }
+    : undefined;
+  const surface = strapiData.surface
+    ? {
+        surfaceTotal: strapiData.surface.surfaceTotal,
+        surfaceCover: strapiData.surface.surfaceCover,
+        surfaceSemiCover: strapiData.surface.surfaceSemiCover,
+        surfaceLand: strapiData.surface.surfaceLand,
       }
     : undefined;
 
@@ -123,10 +130,10 @@ const transformStrapiData = (strapiData: StrapiProperty): IProjectType => {
     expenses: strapiData.expenses,
     location,
     specifications: specs,
+    surface,
   };
 };
 
-// Función para obtener todas las propiedades
 export const getProperties = async (): Promise<IProjectType[]> => {
   try {
     const response = await fetch(`${API_URL}/api/properties?populate=*`);
@@ -137,7 +144,6 @@ export const getProperties = async (): Promise<IProjectType[]> => {
     const result = await response.json();
     const properties = result.data;
 
-    // Transformar los datos al formato que espera tu aplicación
     return properties.map((property: StrapiProperty) => {
       return transformStrapiData(property);
     });
@@ -147,7 +153,6 @@ export const getProperties = async (): Promise<IProjectType[]> => {
   }
 };
 
-// Función para obtener una propiedad específica por ID
 export const getPropertyById = async (
   id: string
 ): Promise<IProjectType | null> => {
@@ -167,6 +172,7 @@ export const getPropertyById = async (
     }
 
     const property = result.data[0];
+    console.log("Propiedad:", property);
 
     return transformStrapiData(property);
   } catch (error) {
