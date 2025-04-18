@@ -1,6 +1,5 @@
 "use client";
 
-import { projects } from "@/app/constants";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
@@ -12,23 +11,58 @@ import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { ring } from "ldrs";
+// import { ring } from "ldrs";
+import { getPropertyById } from "../services";
 
-ring.register();
+// ring.register();
 
 export default function PropertyPage({ params }: { params: { id: string } }) {
   const [project, setProject] = useState<IProjectType | undefined>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const foundProject = projects.find((project) => params.id === project.id);
-    setProject(foundProject);
+    const loadProperty = async () => {
+      setLoading(true);
+      try {
+        const property = await getPropertyById(params.id);
+        setProject(property || undefined);
+      } catch (error) {
+        console.error("Error loading property:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProperty();
   }, [params.id]);
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev);
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <l-ring
+          size="40"
+          stroke="5"
+          bg-opacity="0"
+          speed="2"
+          color="black"
+        ></l-ring>
+      </div>
+    );
+  }
+
+  if (!project) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-xl">Propiedad no encontrada</p>
+      </div>
+    );
+  }
 
   return (
     <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
@@ -77,13 +111,9 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
               </Swiper>
             </div>
           ) : (
-            <l-ring
-              size="40"
-              stroke="5"
-              bg-opacity="0"
-              speed="2"
-              color="black"
-            ></l-ring>
+            <div className="flex justify-center items-center h-[500px] bg-gray-100 rounded-lg">
+              <p>No hay imágenes disponibles</p>
+            </div>
           )}
           <div className="hidden md:inline bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
             <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">
