@@ -26,7 +26,7 @@ export const PropertyInfo: FC<PropertyInfoProps> = ({ project }) => {
       <div>
         {project?.availability === true ? (
           <div className="text-sm border border-[#B0BBC5] bg-[#3B4352] text-white py-1 px-2 w-fit rounded-lg mb-2">
-            {project?.operation.type === "SALE"
+            {project?.operation.type === "SELL"
               ? "Venta"
               : project?.operation.type === "RENT"
               ? "Alquiler"

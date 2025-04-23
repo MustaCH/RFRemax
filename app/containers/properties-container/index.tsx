@@ -7,11 +7,15 @@ import { IProjectType } from "@/app/types";
 import { getProperties } from "@/app/services";
 import { ring } from "ldrs";
 
-ring.register();
 
 export const PropertiesContainer = () => {
   const [properties, setProperties] = useState<IProjectType[]>([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Solo se ejecuta en el cliente
+    ring.register();
+  }, []);
 
   useEffect(() => {
     const loadProperties = async () => {

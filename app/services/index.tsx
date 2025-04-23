@@ -1,7 +1,7 @@
 import { IProjectType } from "../types";
 
 const API_URL =
-  process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337";
+  process.env.NEXT_PUBLIC_STRAPI_API_URL || "https://rfcms.fly.dev";
 
 export interface StrapiResponse<T> {
   data: T[];
@@ -68,7 +68,7 @@ const transformStrapiData = (strapiData: StrapiProperty): IProjectType => {
   const images =
     strapiData.images &&
     strapiData.images.map((img: any) => {
-      return `${API_URL}${img.url}`;
+      return `${img.url}`;
     });
 
   let descriptionHtml = "";

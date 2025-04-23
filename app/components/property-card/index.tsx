@@ -40,14 +40,14 @@ export const PropertyCard: FC<PropertyCardProps> = ({
         {availability === false && (
           <div className="absolute top-0 right-0 p-2 bg-red-700 rounded-tr-lg rounded-bl-lg">
             <p className="text-white">
-              {operation.type === "SALE" ? "Vendido" : "Alquilado"}
+              {operation.type === "SELL" ? "Vendido" : "Alquilado"}
             </p>
           </div>
         )}
       </div>
       <div className="flex flex-col gap-2 px-6 pb-6 pt-3">
         <div className="border border-[#B0BBC5] rounded-lg p-1 w-fit text-xs">
-          <p>{operation.type === "SALE" ? "Venta" : "Alquiler"}</p>
+          <p>{operation.type === "SELL" ? "Venta" : "Alquiler"}</p>
         </div>
         <div className="h-12">
           <PriceFormatter className="font-semibold text-lg" value={price} />
