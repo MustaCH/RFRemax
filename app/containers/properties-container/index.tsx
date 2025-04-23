@@ -5,17 +5,14 @@ import { PropertyCard } from "@/app/components";
 import { FaHouse } from "react-icons/fa6";
 import { IProjectType } from "@/app/types";
 import { getProperties } from "@/app/services";
-import { ring } from "ldrs";
+
 
 
 export const PropertiesContainer = () => {
   const [properties, setProperties] = useState<IProjectType[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Solo se ejecuta en el cliente
-    ring.register();
-  }, []);
+
 
   useEffect(() => {
     const loadProperties = async () => {
@@ -36,13 +33,7 @@ export const PropertiesContainer = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-24">
-        <l-ring
-          size="40"
-          stroke="5"
-          bg-opacity="0"
-          speed="2"
-          color="black"
-        ></l-ring>
+        Cargando...
       </div>
     );
   }

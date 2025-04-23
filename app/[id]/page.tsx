@@ -11,7 +11,7 @@ import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { ring } from "ldrs";
+
 import { getPropertyById } from "../services";
 
 
@@ -21,9 +21,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    ring.register();
-  }, []);
+
 
   useEffect(() => {
     const loadProperty = async () => {
@@ -48,13 +46,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <l-ring
-          size="40"
-          stroke="5"
-          bg-opacity="0"
-          speed="2"
-          color="black"
-        ></l-ring>
+        Cargando...
       </div>
     );
   }
