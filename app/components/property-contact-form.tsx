@@ -14,7 +14,7 @@ const PropertyContactForm: FC<PropertyContactFormProps> = ({ propertyTitle, isLo
     const email = formData.get("email") || "";
     const telefono = formData.get("phone") || "";
     const subject = `Consulta sobre la propiedad: ${propertyTitle}`;
-    const content = `Datos del usuario:\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nPropiedad: ${propertyTitle}`;
+    const content = `Datos del usuario:<br/>Nombre: ${nombre}<br/>Email: ${email}<br/>Teléfono: ${telefono}<br/>Propiedad: ${propertyTitle}`;
     formData.set("subject", subject);
     formData.set("content", content);
     onSend(formData);

@@ -25,7 +25,7 @@ interface TemplateParams {
 
 export async function sendEmail({name, phone, email, content, subject}: EmailParams) {
     smtpEmail.subject = subject
-    smtpEmail.to = [{email: "rfrola@remax.com.ar", name: name}]
+    smtpEmail.to = [{email: "polettiignacio7@gmail.com", name: name}]
     smtpEmail.htmlContent = `<html><body><h4>${subject}</h4><p>${content}</p><br/><p>Nombre: ${name}<br/>Teléfono: ${phone}<br/>Correo: ${email}</p></body></html>`
     smtpEmail.sender = {name: name, email: process.env.NEXT_BREVO_TO_EMAIL}
 
