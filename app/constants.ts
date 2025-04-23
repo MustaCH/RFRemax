@@ -1,5 +1,3 @@
-import { IProjectType } from "@/app/types";
-
 export const exclusiveContent: string = `
   <p style="font-size: 16px; color: #555555; line-height: 1.5; margin-top: 10px;">
                     Como asesora comprometida, mi objetivo es brindarte información relevante que te ayude a tomar decisiones inteligentes en este sector dinámico y lleno de oportunidades.
