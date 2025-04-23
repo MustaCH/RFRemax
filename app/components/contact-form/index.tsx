@@ -10,7 +10,10 @@ interface ContactFormProps {
   showContent?: boolean;
 }
 
+import { useState } from "react";
+
 const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = true, showContent = true }) => {
+  const [success, setSuccess] = useState(false);
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -35,16 +38,25 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
       content: "",
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values, { resetForm }) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
-      action(formData);
+      await action(formData);
+      setSuccess(true);
+      resetForm();
+      setTimeout(() => setSuccess(false), 3000);
     },
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className="space-y-4 w-full">
-      <div>
+    <>
+      {success && (
+        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded mb-2 text-center">
+          ¡Gracias por tu consulta!
+        </div>
+      )}
+      <form onSubmit={formik.handleSubmit} className="space-y-4 w-full">
+        <div>
         <input
           type="email"
           name="email"
@@ -142,6 +154,7 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
         Enviar
       </button>}
     </form>
+    </>
   );
 };
 
