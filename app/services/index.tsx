@@ -1,4 +1,5 @@
 import { IProjectType } from "../types";
+import { StrapiImage, StrapiDescriptionBlock } from "./strapi-types";
 
 const API_URL =
   process.env.NEXT_PUBLIC_STRAPI_API_URL || "https://rfcms.fly.dev";
@@ -19,13 +20,13 @@ export interface StrapiProperty {
   id: number;
   documentId: string;
   title: string;
-  description: any[];
+  description: StrapiDescriptionBlock[];
   operation: string;
   availability: boolean;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  images: any[];
+  images: StrapiImage[];
   price: {
     id: number;
     price: number;
@@ -67,16 +68,16 @@ export interface StrapiProperty {
 const transformStrapiData = (strapiData: StrapiProperty): IProjectType => {
   const images =
     strapiData.images &&
-    strapiData.images.map((img: any) => {
+    strapiData.images.map((img: StrapiImage) => {
       return `${img.url}`;
     });
 
   let descriptionHtml = "";
   if (Array.isArray(strapiData.description)) {
     descriptionHtml = strapiData.description
-      .map((block: any) => {
+      .map((block: StrapiDescriptionBlock) => {
         if (block.type === "paragraph") {
-          const text = block.children.map((child: any) => child.text).join("");
+          const text = block.children.map((child) => child.text).join("");
           return text ? `<p>${text}</p>` : "";
         }
         return "";
