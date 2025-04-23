@@ -6,17 +6,24 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 interface ContactFormProps {
   action: (formData: FormData) => void;
   isLoading: boolean;
+  showSubject?: boolean;
+  showContent?: boolean;
 }
 
-const ContactForm: FC<ContactFormProps> = ({ action, isLoading }) => {
+const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = true, showContent = true }) => {
 
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Ingresa un email válido")
       .required("El email es obligatorio"),
     to_name: Yup.string().required("El nombre es obligatorio"),
-    subject: Yup.string().required("El asunto es obligatorio"),
-    content: Yup.string().required("El mensaje no puede estar vacío"),
+    phone: Yup.string(),
+    ...(showSubject !== false && {
+      subject: Yup.string().required("El asunto es obligatorio"),
+    }),
+    ...(showContent !== false && {
+      content: Yup.string().required("El mensaje no puede estar vacío"),
+    }),
   });
 
   const formik = useFormik({
@@ -84,41 +91,45 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading }) => {
           className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
-      <div>
-        <input
-          type="text"
-          name="subject"
-          placeholder="Asunto"
-          value={formik.values.subject}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          className={`w-full p-2 border rounded focus:outline-none focus:ring-2 ${
-            formik.touched.subject && formik.errors.subject
-              ? "border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:ring-blue-500"
-          }`}
-        />
-        {formik.touched.subject && formik.errors.subject && (
-          <p className="text-red-500 text-sm mt-1">{formik.errors.subject}</p>
-        )}
-      </div>
-      <div>
-        <textarea
-          name="content"
-          placeholder="Escribí tu mensaje..."
-          value={formik.values.content}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          className={`w-full p-2 border rounded focus:outline-none focus:ring-2 h-24 ${
-            formik.touched.content && formik.errors.content
-              ? "border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:ring-blue-500"
-          }`}
-        ></textarea>
-        {formik.touched.content && formik.errors.content && (
-          <p className="text-red-500 text-sm mt-1">{formik.errors.content}</p>
-        )}
-      </div>
+      {showSubject !== false && (
+        <div>
+          <input
+            type="text"
+            name="subject"
+            placeholder="Asunto"
+            value={formik.values.subject}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className={`w-full p-2 border rounded focus:outline-none focus:ring-2 ${
+              formik.touched.subject && formik.errors.subject
+                ? "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-blue-500"
+            }`}
+          />
+          {formik.touched.subject && formik.errors.subject && (
+            <p className="text-red-500 text-sm mt-1">{formik.errors.subject}</p>
+          )}
+        </div>
+      )}
+      {showContent !== false && (
+        <div>
+          <textarea
+            name="content"
+            placeholder="Escribí tu mensaje..."
+            value={formik.values.content}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            className={`w-full p-2 border rounded focus:outline-none focus:ring-2 h-24 ${
+              formik.touched.content && formik.errors.content
+                ? "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-blue-500"
+            }`}
+          ></textarea>
+          {formik.touched.content && formik.errors.content && (
+            <p className="text-red-500 text-sm mt-1">{formik.errors.content}</p>
+          )}
+        </div>
+      )}
      {isLoading ?   
         <div className="flex justify-center">
           <AiOutlineLoading3Quarters className="text-xl font-bold text-blue-600 animate-spin" />

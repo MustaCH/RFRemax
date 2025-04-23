@@ -10,6 +10,8 @@ import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
+import PropertyContactForm from "../components/property-contact-form";
+import { handleForm } from "../action";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import { getPropertyById } from "../services";
@@ -20,6 +22,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isSending, setIsSending] = useState(false);
 
 
 
@@ -131,6 +134,22 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
               {isExpanded ? "Ver menos" : "Ver más"}{" "}
               {isExpanded ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </button>
+          </div>
+
+          {/* Formulario de contacto para propiedad */}
+          <div className="bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
+            <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">
+              Consultar por esta propiedad
+            </h2>
+            <PropertyContactForm
+              propertyTitle={project?.title || "Propiedad"}
+              isLoading={isSending}
+              onSend={async (formData) => {
+                setIsSending(true);
+                await handleForm(formData);
+                setIsSending(false);
+              }}
+            />
           </div>
         </div>
         <div className="flex flex-col gap-4">
