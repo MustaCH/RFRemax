@@ -14,13 +14,16 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { ring } from "ldrs";
 import { getPropertyById } from "../services";
 
-ring.register();
 
 export default function PropertyPage({ params }: { params: { id: string } }) {
   const [project, setProject] = useState<IProjectType | undefined>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    ring.register();
+  }, []);
 
   useEffect(() => {
     const loadProperty = async () => {
