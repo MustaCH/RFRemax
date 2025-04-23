@@ -16,7 +16,7 @@ interface PropertyCardProps {
   location?: LocationType;
 }
 
-const BACITY = "Ciudad Autónoma de Buenos Aires";
+const BACITY = "Ciudad de Buenos Aires";
 
 export const PropertyCard: FC<PropertyCardProps> = ({
   image,
@@ -31,11 +31,11 @@ export const PropertyCard: FC<PropertyCardProps> = ({
   return (
     <Link
       href={`${id}`}
-      className="shadow-md rounded-lg border-2 border-transparent hover:border-[#B0BBC5] duration-150 bg-white w-80"
+      className="shadow-md rounded-lg border-2 border-transparent hover:border-[#B0BBC5] duration-150 bg-white w-full md:w-80 lg:w-72 xl:w-96"
     >
       <div
         style={{ backgroundImage: `url(${image})` }}
-        className="relative h-60 bg-center bg-cover bg-no-repeat w-full rounded-t-lg"
+        className="relative h-72 bg-center bg-cover bg-no-repeat w-full rounded-t-lg"
       >
         {availability === false && (
           <div className="absolute top-0 right-0 p-2 bg-red-700 rounded-tr-lg rounded-bl-lg">

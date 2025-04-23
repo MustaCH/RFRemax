@@ -56,7 +56,7 @@ export const PropertiesContainer = () => {
         <FaHouse />
         <h2 className="capitalize font-medium">propiedades</h2>
       </div>
-      <div className="flex flex-wrap justify-center md:justify-start gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8">
         {properties.map((property) => (
           <PropertyCard
             key={property.id}

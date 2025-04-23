@@ -5,7 +5,7 @@ import { FC } from "react";
 interface PropertyInfoProps {
   project?: IProjectType;
 }
-const BACITY = "Ciudad Autónoma de Buenos Aires";
+const BACITY = "Ciudad de Buenos Aires";
 
 export const PropertyInfo: FC<PropertyInfoProps> = ({ project }) => {
   return (
