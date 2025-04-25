@@ -63,7 +63,11 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
+    <>
+      <head>
+        <link rel="canonical" href={`https://rfrola.com.ar/${params.id}`} />
+      </head>
+      <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 justify-evenly gap-4">
         <div className="flex flex-col gap-4">
           {project?.images && project.images.length > 0 ? (
@@ -196,5 +200,6 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
         </div>
       </div>
     </main>
+    </>
   );
 }
