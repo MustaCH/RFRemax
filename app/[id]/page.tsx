@@ -66,6 +66,35 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
     <>
       <head>
         <link rel="canonical" href={`https://rfrola.com.ar/${params.id}`} />
+        {project && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Residence',
+                name: project.title,
+                description: project.description?.replace(/<[^>]+>/g, ''),
+                url: `https://rfrola.com.ar/${project.id}`,
+                image: project.images && project.images.length > 0 ? project.images : undefined,
+                address: project.location ? {
+                  '@type': 'PostalAddress',
+                  streetAddress: project.location.street || '',
+                  addressLocality: project.location.city || '',
+                  addressRegion: project.location.province || '',
+                  addressCountry: 'AR',
+                } : undefined,
+                offers: {
+                  '@type': 'Offer',
+                  price: project.price?.price,
+                  priceCurrency: project.price?.currency,
+                  availability: project.availability ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
+                  url: `https://rfrola.com.ar/${project.id}`,
+                },
+              }),
+            }}
+          />
+        )}
       </head>
       <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 justify-evenly gap-4">
