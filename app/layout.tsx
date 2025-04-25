@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Time, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
 };
 
+import Head from "next/head";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,6 +34,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17024068643"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17024068643');
+            `,
+          }}
+        />
+      </Head>
       <body className={`${outfitFont.variable} antialiased`}>
         <ModalProvider>
           <Navbar />

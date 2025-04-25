@@ -43,6 +43,14 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
       await action(formData);
       setSuccess(true);
+      // Google Ads conversion tracking
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
+          'value': 1.0,
+          'currency': 'ARS'
+        });
+      }
       resetForm();
       setTimeout(() => setSuccess(false), 3000);
     },
