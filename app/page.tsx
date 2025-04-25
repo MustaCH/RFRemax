@@ -1,9 +1,10 @@
+import Head from "next/head";
 import { HomeContainer } from "./containers";
 
 export default function Home() {
   return (
     <>
-      <head>
+      <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -21,7 +22,7 @@ export default function Home() {
             })
           }}
         />
-      </head>
+      </Head>
       <main>
         <HomeContainer/>
       </main>
