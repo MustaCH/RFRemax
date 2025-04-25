@@ -55,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <Head>
+        <meta name="google-site-verification" content="AH1EOHT5K_I5LdX9ojwoaHr7sc8IeGWY9iaK6KyaW9I" />
         <link rel="canonical" href="https://rominafrola.com/" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17024068643"></script>
         <script
