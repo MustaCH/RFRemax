@@ -15,6 +15,7 @@ import { handleForm } from "../action";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import { getPropertyById } from "../services";
+import Head from "next/head";
 
 
 export default function PropertyPage({ params }: { params: { id: string } }) {
@@ -64,7 +65,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <head>
+      <Head>
         <link rel="canonical" href={`https://rfrola.com.ar/${params.id}`} />
         {project && (
           <script
@@ -95,7 +96,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
             }}
           />
         )}
-      </head>
+      </Head>
       <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 justify-evenly gap-4">
         <div className="flex flex-col gap-4">
