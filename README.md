@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RFRemax - Romina Frola | Agente Inmobiliario
 
-## Getting Started
+Sitio web profesional para la agente inmobiliaria Romina Frola, desarrollado en Next.js y optimizado para SEO, performance y accesibilidad.
 
-First, run the development server:
+## 🏡 Descripción General
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Este proyecto es una plataforma inmobiliaria moderna que permite a Romina Frola mostrar propiedades, recibir consultas y brindar información relevante a potenciales clientes. El sitio está optimizado para buscadores y dispositivos móviles, siguiendo las mejores prácticas de desarrollo web.
+
+## ✨ Características principales
+
+- Listado dinámico de propiedades con detalle individual.
+- SEO avanzado: sitemap dinámico, robots.txt, metadatos enriquecidos y marcado estructurado.
+- Accesibilidad mejorada (a11y) y excelente puntuación en Lighthouse.
+- Formulario de contacto y enlaces directos a redes sociales.
+- Diseño responsive y moderno.
+- Integración con servicios externos (Google Analytics, Tag Manager, etc).
+
+## 🛠️ Tecnologías y dependencias
+
+- [Next.js](https://nextjs.org/) (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Google Fonts / next/font
+- Cloudinary (imágenes)
+- Otros: RE/MAX branding, iconos, etc.
+
+## 🚀 Instalación y uso local
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/MustaCH/RFRemax.git
+   cd RFRemax
+   ```
+2. Instala dependencias:
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+3. Ejecuta el servidor de desarrollo:
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   ```
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+## 🌐 SEO y Accesibilidad
+
+- **Sitemap:** `/api/sitemap.xml` generado dinámicamente con todas las propiedades y páginas relevantes.
+- **robots.txt:** Permite indexación y referencia al sitemap.
+- **Marcado estructurado:** JSON-LD para propiedades y organización.
+- **Meta tags:** Descripciones, Open Graph, Twitter Cards y verificación de Google.
+- **Accesibilidad:** Uso de etiquetas semánticas, roles ARIA y buenas prácticas a11y.
+- **Puntuación Lighthouse:** 100/100 en SEO y accesibilidad.
+
+## 🗂️ Estructura del proyecto
+
+```
+/app
+  /[id]           # Página de propiedades individuales
+  /components     # Componentes reutilizables (banners, cards, formularios)
+  /containers     # Contenedores de secciones principales
+  /services       # Lógica de acceso a datos/API
+  /layout.tsx     # Layout global y metadatos
+  /page.tsx       # Página principal (home)
+  /page.metadata.ts # Metadatos de la home
+/pages/api
+  sitemap.xml.ts  # Endpoint dinámico para sitemap
+/public
+  robots.txt
+  googleXX.html   # Verificación de Google Search Console
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ☁️ Despliegue
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- El proyecto puede desplegarse fácilmente en Vercel, Netlify o cualquier hosting compatible con Next.js.
+- Configura las variables de entorno necesarias para producción.
+- El archivo `next.config.mjs` incluye headers de seguridad (CSP).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contribuciones
 
-## Learn More
+¡Contribuciones y sugerencias son bienvenidas!  
+Abre un issue o un pull request para proponer mejoras, reportar bugs o sugerir nuevas funcionalidades.
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contacto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Romina Frola**  
+  [Sitio web](https://rfrola.com.ar)  
+  [Instagram](https://www.instagram.com/rominafrola.remax/)  
+  [Facebook](https://www.facebook.com/rominafrola.remax/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
