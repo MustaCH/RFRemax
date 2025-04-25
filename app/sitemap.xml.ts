@@ -1,9 +1,8 @@
 import { getProperties } from "./services";
-import { NextRequest } from "next/server";
 
 const BASE_URL = "https://rfrola.com.ar";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   const staticRoutes = ["", "/contacto", "/propiedades", "/quiensoy"];
 
   const properties = await getProperties();
