@@ -14,7 +14,7 @@ export const WelcomeBanner = () => {
 
 
     return (
-        <div id="welcome-banner" className={`${alloverFont.variable} w-full h-[80vh] md:h-[113vh] mt-2 md:mt-3 bg-cover bg-center md:bg-[center_top_-12rem] bg-[url(https://res.cloudinary.com/dfuru6l6d/image/upload/v1745614032/bannerwelcome_liywcy_rw3zep.webp)]`}>
+        <div id="welcome-banner" className={`${alloverFont.variable} w-full h-[60vh] md:h-[75vh] mt-2 md:mt-3 bg-cover bg-center md:bg-[center_top_-12rem] bg-[url(https://res.cloudinary.com/dfuru6l6d/image/upload/v1745614032/bannerwelcome_liywcy_rw3zep.webp)]`}>
             <p className={`text-4xl md:text-7xl text-[#003457] font-bold text-right pt-28 px-12 md:mr-48 leading-10 drop-shadow-lg`}>Romina</p>
             <p className={`text-4xl md:text-7xl text-[#003457] font-bold text-right pt-1 md:pt-4 px-12 md:mr-48 leading-10 drop-shadow-lg`}>Frola</p>
             <p className="text-[#dc162f] text-[0.6rem] md:text-xl text-right pr-12 md:mr-48 drop-shadow-lg">Agente Inmobiliario</p>
