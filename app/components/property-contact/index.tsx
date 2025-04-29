@@ -12,7 +12,7 @@ interface PropertyConctactProps {
 export const PropertyConctact: FC<PropertyConctactProps> = ({project}) => {
     return (
         <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between items-center border border-[#B0BBC5] bg-white shadow-md p-8 rounded-lg h-fit">
-        <div className="rounded-full border-2 border-[#B0BBC5] bg-cover bg-center shadow-lg bg-[url(https://res.cloudinary.com/dfuru6l6d/image/upload/v1732918231/Imagen_de_WhatsApp_2024-11-29_a_las_17.05.38_8b722284_q3utql.jpg)] w-20 h-20 md:w-20 md:h-20">
+        <div className="rounded-full border-2 border-[#B0BBC5] bg-cover bg-center shadow-lg bg-[url(https://res.cloudinary.com/dfuru6l6d/image/upload/v1745614226/whoami2_kqbnke.webp)] w-20 h-20 md:w-20 md:h-20">
         </div>
         <div>
           <h3 className="text-xl font-semibold">Consulta por ésta propiedad</h3>
