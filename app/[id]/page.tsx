@@ -16,7 +16,6 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import { getPropertyById } from "../services";
 import Head from "next/head";
-import { Spinner } from "@heroui/spinner";
 
 
 export default function PropertyPage({ params }: { params: { id: string } }) {
@@ -51,7 +50,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <Spinner />
+        
       </div>
     );
   }

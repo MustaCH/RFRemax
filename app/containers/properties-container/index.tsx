@@ -5,7 +5,6 @@ import { PropertyCard } from "@/app/components";
 import { FaHouse } from "react-icons/fa6";
 import { IProjectType } from "@/app/types";
 import { getProperties } from "@/app/services";
-import { Spinner } from "@heroui/spinner";
 
 
 
@@ -38,7 +37,7 @@ export const PropertiesContainer = () => {
           <FaHouse />
           <h2 className="capitalize font-medium">propiedades</h2>
         </div>
-        <Spinner />
+        
       </div>
     );
   }
