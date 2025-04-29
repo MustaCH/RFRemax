@@ -5,6 +5,7 @@ import { PropertyCard } from "@/app/components";
 import { FaHouse } from "react-icons/fa6";
 import { IProjectType } from "@/app/types";
 import { getProperties } from "@/app/services";
+import { Spinner } from "@heroui/spinner";
 
 
 
@@ -32,8 +33,12 @@ export const PropertiesContainer = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center py-24">
-        Cargando...
+      <div className="flex flex-col gap-8 p-12 md:p-24">
+        <div className="flex items-center gap-2 text-xl text-[#3B4352] border-b border-b-[#4088e3] pb-4">
+          <FaHouse />
+          <h2 className="capitalize font-medium">propiedades</h2>
+        </div>
+        <Spinner />
       </div>
     );
   }
