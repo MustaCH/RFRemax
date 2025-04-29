@@ -5,7 +5,8 @@ import { PropertyCard } from "@/app/components";
 import { FaHouse } from "react-icons/fa6";
 import { IProjectType } from "@/app/types";
 import { getProperties } from "@/app/services";
-
+import { Ring } from 'ldrs/react'
+import 'ldrs/react/Ring.css'
 
 
 export const PropertiesContainer = () => {
@@ -37,7 +38,9 @@ export const PropertiesContainer = () => {
           <FaHouse />
           <h2 className="capitalize font-medium">propiedades</h2>
         </div>
-        
+        <div className="flex justify-center items-center h-fit">
+          <Ring color="#4088e3"/>
+        </div>
       </div>
     );
   }

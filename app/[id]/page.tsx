@@ -16,6 +16,8 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import { getPropertyById } from "../services";
 import Head from "next/head";
+import { Ring } from "ldrs/react";
+import 'ldrs/react/Ring.css'
 
 
 export default function PropertyPage({ params }: { params: { id: string } }) {
@@ -50,7 +52,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        
+        <Ring color="#4088e3"/>
       </div>
     );
   }
