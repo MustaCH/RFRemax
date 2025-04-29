@@ -57,6 +57,18 @@ export default function RootLayout({
       <Head>
         <meta name="google-site-verification" content="AH1EOHT5K_I5LdX9ojwoaHr7sc8IeGWY9iaK6KyaW9I" />
         <link rel="canonical" href="https://rominafrola.com/" />
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id=GTM-K846RW3R'+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-K846RW3R');
+            `,
+          }}
+        />
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17024068643"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -70,6 +82,11 @@ export default function RootLayout({
         />
       </Head>
       <body className={`${outfitFont.variable} antialiased`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K846RW3R"
+                  height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe>
+        </noscript>
         <ModalProvider>
           <Navbar />
           {children}
