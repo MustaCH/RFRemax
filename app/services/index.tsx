@@ -173,7 +173,6 @@ export const getPropertyById = async (
     }
 
     const property = result.data[0];
-    console.log("Propiedad:", property);
 
     return transformStrapiData(property);
   } catch (error) {

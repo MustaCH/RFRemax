@@ -20,7 +20,6 @@ interface PropertyPageProps {
 }
 
 export const PropertySpecs: FC<PropertyPageProps> = ({ project }) => {
-  console.log("Propiedad recibida en PropertySpecs:", project);
 
   return (
     <div className="flex flex-col gap-8">
