@@ -43,16 +43,28 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
     onSubmit: async (values) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
-      await action(formData);
-      setSuccess(true);
-      if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        window.gtag('_event', 'gtm.js', {
+      
+      // Disparar el evento de conversión ANTES de la acción
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
           'send_to': 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
           'value': 1.0,
           'currency': 'ARS'
         });
       }
       
+      // También disparar el evento dataLayer para GTM
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'formSubmission',
+        'formType': 'contact',
+        'formLocation': window.location.pathname
+      });
+    
+      await action(formData);
+      setSuccess(true);
+      
+      // Redirección opcional (no necesaria para la conversión)
       const currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('conversion', 'success');
       router.push(currentUrl.toString());
