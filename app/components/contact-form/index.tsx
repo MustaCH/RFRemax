@@ -10,10 +10,12 @@ interface ContactFormProps {
   showContent?: boolean;
 }
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = true, showContent = true }) => {
   const [success, setSuccess] = useState(false);
+  const router = useRouter();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -50,8 +52,11 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
           'currency': 'ARS'
         });
       }
-      resetForm();
-      setTimeout(() => setSuccess(false), 3000);
+      
+      // Redirigir a la URL actual con parámetro de éxito
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('conversion', 'success');
+      router.push(currentUrl.toString());
     },
   });
 
