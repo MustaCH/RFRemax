@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar, Footer } from "./components";
 import { ModalProvider } from "./context";
+import Script from "next/script";
 
 const outfitFont = localFont({
   src: [
@@ -26,11 +27,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Romina Frola - Agente Inmobiliario | RE/MAX Time",
     description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Time, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
-    url: "https://rfrola.com.ar/",
+    url: "https://rominafrola.com/",
     type: "website",
     images: [
       {
-        url: "https://rfrola.com.ar/og-default.jpg",
+        url: "https://rominafrola.com/og-default.jpg",
         width: 1200,
         height: 630,
         alt: "Romina Frola - Agente Inmobiliario",
@@ -41,11 +42,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Romina Frola - Agente Inmobiliario | RE/MAX Time",
     description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Time, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
-    images: ["https://rfrola.com.ar/og-default.jpg"],
+    images: ["https://rominafrola.com/og-default.jpg"],
+  },
+  verification: {
+    google: "AH1EOHT5K_I5LdX9ojwoaHr7sc8IeGWY9iaK6KyaW9I",
+  },
+  alternates: {
+    canonical: "https://rominafrola.com/",
   },
 };
-
-import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -54,38 +59,47 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <Head>
-        <meta name="google-site-verification" content="AH1EOHT5K_I5LdX9ojwoaHr7sc8IeGWY9iaK6KyaW9I" />
-        <link rel="canonical" href="https://rominafrola.com/" />
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id=GTM-K846RW3R'+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-K846RW3R');
-            `,
-          }}
-        />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17024068643"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17024068643');
-            `,
-          }}
-        />
-      </Head>
+      {/* Google Tag Manager */}
+      <Script
+        id="gtm-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-K846RW3R');
+          `,
+        }}
+      />
+      {/* Google Ads */}
+      <Script
+        id="google-ads"
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17024068643"
+      />
+      <Script
+        id="google-ads-config"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17024068643');
+          `,
+        }}
+      />
       <body className={`${outfitFont.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K846RW3R"
-                  height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K846RW3R"
+            height="0"
+            width="0"
+            style={{display:'none',visibility:'hidden'}}>
+          </iframe>
         </noscript>
         <ModalProvider>
           <Navbar />
