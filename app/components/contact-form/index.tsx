@@ -40,7 +40,7 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
       content: "",
     },
     validationSchema,
-    onSubmit: async (values, { resetForm }) => {
+    onSubmit: async (values) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
       await action(formData);
