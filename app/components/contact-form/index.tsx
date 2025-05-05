@@ -46,7 +46,7 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
       await action(formData);
       setSuccess(true);
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        window.gtag('event', 'conversion', {
+        window.gtag('_event', 'gtm.js', {
           'send_to': 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
           'value': 1.0,
           'currency': 'ARS'
