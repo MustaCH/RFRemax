@@ -10,7 +10,7 @@ interface ContactFormProps {
   showContent?: boolean;
 }
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = true, showContent = true }) => {
@@ -53,7 +53,6 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
         });
       }
       
-      // Redirigir a la URL actual con parámetro de éxito
       const currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('conversion', 'success');
       router.push(currentUrl.toString());
