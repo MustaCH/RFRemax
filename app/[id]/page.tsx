@@ -193,6 +193,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
             <PropertyInfo project={project} />
             <PropertySpecs project={project} />
           </div>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vOD5MrtRWsw?si=Tcqs_v2C71ZCs1NY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           <div className="inline md:hidden bg-white border border-[#B0BBC5] p-8 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">
               Descripción
@@ -215,7 +216,6 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
               {isExpanded ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </button>
           </div>
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vOD5MrtRWsw?si=Tcqs_v2C71ZCs1NY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           <div>
             <PropertyContact project={project} />
           </div>
