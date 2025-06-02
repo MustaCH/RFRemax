@@ -26,7 +26,24 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isSending, setIsSending] = useState(false);
+  const [video, setVideo] = useState("")
 
+
+  useEffect(() => {
+    if (project) {
+      if (project.title === "Nave a estrenar en Plaza Industrial Escobar") {
+        setVideo("https://www.youtube.com/embed/JrLBixR2P2k?si=7VlkOn_5jrRy-7Xh")
+      } else if (project.title === "Venta Local Comercial en Puerto Madero") {
+        setVideo("https://www.youtube.com/embed/vOD5MrtRWsw?si=3Tcyrc8BuKu9SVs2")
+      } else if (project.title === "Departamento 5 Amb. Barrio Parque con cochera") {
+        setVideo("https://www.youtube.com/embed/VgLrDIOSGU0?si=LNns-NtzJ4M_XuZ6")
+      } else if (project.title === "Venta Depto. 3 Amb. Puerto Madero - 3 Cocheras") {
+        setVideo("https://www.youtube.com/embed/ysSR7Sf3J5w?si=-4up3PvDQkkV728U")
+      } else {
+        setVideo("")
+      }
+    }
+  }, [project]);
 
 
   useEffect(() => {
@@ -193,7 +210,9 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
             <PropertyInfo project={project} />
             <PropertySpecs project={project} />
           </div>
-          <iframe className="rounded-lg" width="100%" height="315" src="https://www.youtube.com/embed/vOD5MrtRWsw?si=Tcqs_v2C71ZCs1NY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          {video && (
+            <iframe className="rounded-lg" width="100%" height="315" src={video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          )}
           <div className="inline md:hidden bg-white border border-[#B0BBC5] p-8 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4 underline decoration-[#712536] underline-offset-8">
               Descripción
