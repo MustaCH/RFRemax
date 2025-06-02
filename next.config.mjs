@@ -6,7 +6,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; img-src *; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://rfcms.fly.dev; frame-src https://www.youtube.com;"
+            value: "default-src 'self'; img-src *; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' data:; font-src 'self' data:; connect-src 'self' https://rfcms.fly.dev; frame-src https://www.youtube.com;"
           },
           {
             key: 'Strict-Transport-Security',
