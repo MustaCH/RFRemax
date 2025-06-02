@@ -215,7 +215,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
               {isExpanded ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </button>
           </div>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/vOD5MrtRWsw?si=Tcqs_v2C71ZCs1NY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vOD5MrtRWsw?si=Tcqs_v2C71ZCs1NY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           <div>
             <PropertyContact project={project} />
           </div>
