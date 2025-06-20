@@ -30,10 +30,13 @@ const TemplateForm: FC<TemplateFormProps> = ({ action, isLoading }) => {
     onSubmit: async (values) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
-      sendGTMEvent({ event: 'conversion', value: 'xyz' })
-    
       await action(formData);
       
+      sendGTMEvent({
+        event: 'conversion',
+        ...values 
+      });
+    
       const currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('conversion', 'success');
       router.push(currentUrl.toString());
