@@ -3,6 +3,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import { sendGTMEvent } from '@next/third-parties/google'
+
 
 interface TemplateFormProps {
   action: (formData: FormData) => void;
@@ -28,20 +30,7 @@ const TemplateForm: FC<TemplateFormProps> = ({ action, isLoading }) => {
     onSubmit: async (values) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
-      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
-          'value': 1.0,
-          'currency': 'ARS'
-        });
-      }
-      
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'event': 'formSubmission',
-        'formType': 'contact',
-        'formLocation': window.location.pathname
-      });
+      sendGTMEvent({ event: 'conversion', value: 'xyz' })
     
       await action(formData);
       
