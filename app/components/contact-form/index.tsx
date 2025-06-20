@@ -44,7 +44,6 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
       
-      // Disparar el evento de conversión ANTES de la acción
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         window.gtag('event', 'conversion', {
           'send_to': 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
@@ -53,7 +52,6 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
         });
       }
       
-      // También disparar el evento dataLayer para GTM
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event': 'formSubmission',
@@ -64,7 +62,6 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
       await action(formData);
       setSuccess(true);
       
-      // Redirección opcional (no necesaria para la conversión)
       const currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('conversion', 'success');
       router.push(currentUrl.toString());
