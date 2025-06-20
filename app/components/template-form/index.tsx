@@ -30,17 +30,32 @@ const TemplateForm: FC<TemplateFormProps> = ({ action, isLoading }) => {
     onSubmit: async (values) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
+      try {
       await action(formData);
       
-      sendGTMEvent({
-        event: 'conversion',
-        ...values 
-      });
+        sendGTMEvent({
+          event: 'conversion',
+          form_name: 'exclusive_info_modal', 
+          ...values 
+        });
+
+        sendGTMEvent({
+            event: 'conversion',
+            send_to: 'AW-17024068643/_bxECNvTnr0aEKPY2rU_', 
+            value: 1.0, 
+            currency: 'ARS'
+        });
+        
     
       const currentUrl = new URL(window.location.href);
       currentUrl.searchParams.set('conversion', 'success');
       router.push(currentUrl.toString());
-      action(formData);
+      action(formData); 
+      }
+      catch (error) { 
+        console.error("Error al enviar el formulario:", error);
+        alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+      }
     },
   });
 

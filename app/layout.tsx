@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       {/* Google Tag Manager */}
-      <GoogleTagManager gtmId="GTM-XYZ" />
+      <GoogleTagManager gtmId="GTM-K846RW3R" />
       {/* Google Ads */}
       <body className={`${outfitFont.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}
