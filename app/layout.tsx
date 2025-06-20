@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar, Footer } from "./components";
 import { ModalProvider } from "./context";
-import Script from "next/script";
 import { GoogleTagManager } from '@next/third-parties/google'
 
 
