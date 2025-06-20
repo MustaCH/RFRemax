@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface TemplateFormProps {
   action: (formData: FormData) => void;
