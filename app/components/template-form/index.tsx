@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useRouter } from "next/router";
 
 interface TemplateFormProps {
   action: (formData: FormData) => void;
@@ -9,6 +10,7 @@ interface TemplateFormProps {
 }
 
 const TemplateForm: FC<TemplateFormProps> = ({ action, isLoading }) => {
+  const router = useRouter();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -23,9 +25,29 @@ const TemplateForm: FC<TemplateFormProps> = ({ action, isLoading }) => {
       to_name: "",
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
+          'value': 1.0,
+          'currency': 'ARS'
+        });
+      }
+      
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'formSubmission',
+        'formType': 'contact',
+        'formLocation': window.location.pathname
+      });
+    
+      await action(formData);
+      
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('conversion', 'success');
+      router.push(currentUrl.toString());
       action(formData);
     },
   });
