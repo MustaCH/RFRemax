@@ -1,20 +1,19 @@
-'use client'
-
 import { Metadata } from "next";
 import { getPropertyById } from "../services";
-import { useState } from "react";
 import { propertiesDescription } from "./descriptions";
 
 export async function GenerateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const [description, setDescription ] = useState<string>()
   const property = await getPropertyById(params.id);
+  let description: string | undefined;
 
-  if (property!.id = "kvjbgq3pb9h8szpv22db75r2") {
-    setDescription(propertiesDescription.dpto_venta_puerto_madero)
-  } else if (property!.id = "dvd52aaf0nqmrc99gx4zdcda") {
-    setDescription(propertiesDescription.nave_alquiler_escobar)
-  } else if (property!.id = "jmf5w0vr6v9kiismsf12nvy5") {
-    setDescription(propertiesDescription.venta_local_renta_puerto_madero)
+if (property) {
+    if (property.id === "kvjbgq3pb9h8szpv22db75r2") {
+      description = propertiesDescription.dpto_venta_puerto_madero;
+    } else if (property.id === "dvd52aaf0nqmrc99gx4zdcda") {
+      description = propertiesDescription.nave_alquiler_escobar;
+    } else if (property.id === "jmf5w0vr6v9kiismsf12nvy5") {
+      description = propertiesDescription.venta_local_renta_puerto_madero;
+    }
   }
 
   if (!property) {
