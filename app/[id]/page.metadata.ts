@@ -1,3 +1,5 @@
+'use client'
+
 import { Metadata } from "next";
 import { getPropertyById } from "../services";
 import { useState } from "react";
