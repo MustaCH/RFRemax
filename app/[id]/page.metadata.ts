@@ -5,7 +5,7 @@ import { getPropertyById } from "../services";
 import { useState } from "react";
 import { propertiesDescription } from "./descriptions";
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function GenerateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const [description, setDescription ] = useState<string>()
   const property = await getPropertyById(params.id);
 
