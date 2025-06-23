@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { getPropertyById } from "../services";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { propertiesDescription } from "./descriptions";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
