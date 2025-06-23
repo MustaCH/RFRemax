@@ -1,8 +1,21 @@
 import { Metadata } from "next";
 import { getPropertyById } from "../services";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { propertiesDescription } from "./descriptions";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const [description, setDescription ] = useState<string>()
   const property = await getPropertyById(params.id);
+
+  if (property!.id = "kvjbgq3pb9h8szpv22db75r2") {
+    setDescription(propertiesDescription.dpto_venta_puerto_madero)
+  } else if (property!.id = "dvd52aaf0nqmrc99gx4zdcda") {
+    setDescription(propertiesDescription.nave_alquiler_escobar)
+  } else if (property!.id = "jmf5w0vr6v9kiismsf12nvy5") {
+    setDescription(propertiesDescription.venta_local_renta_puerto_madero)
+  }
+
   if (!property) {
     return {
       title: "Propiedad no encontrada | Romina Frola - Agente Inmobiliario",
@@ -20,7 +33,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       },
     };
   }
-  const cleanDescription = property.description?.replace(/<[^>]+>/g, "").slice(0, 160) || `Consulta por la propiedad ${property.title} en Romina Frola - Agente Inmobiliario.`;
+  const cleanDescription = description?.replace(/<[^>]+>/g, "").slice(0, 160) || `Consulta por la propiedad ${property.title} en Romina Frola - Agente Inmobiliario.`;
   const image = property.images && property.images.length > 0 ? property.images[0] : "https://rfrola.com.ar/og-default.jpg";
   const url = `https://rfrola.com.ar/${property.id}`;
   return {
