@@ -2,6 +2,9 @@ import { FC } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useRouter } from "next/navigation";
+import { sendGTMEvent } from '@next/third-parties/google'
+
 
 interface TemplateFormProps {
   action: (formData: FormData) => void;
@@ -9,6 +12,7 @@ interface TemplateFormProps {
 }
 
 const TemplateForm: FC<TemplateFormProps> = ({ action, isLoading }) => {
+  const router = useRouter();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -23,10 +27,35 @@ const TemplateForm: FC<TemplateFormProps> = ({ action, isLoading }) => {
       to_name: "",
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       const formData = new FormData();
       Object.entries(values).forEach(([key, value]) => formData.append(key, value));
-      action(formData);
+      try {
+      await action(formData);
+      
+        sendGTMEvent({
+          event: 'conversion',
+          form_name: 'exclusive_info_modal', 
+          ...values 
+        });
+
+        sendGTMEvent({
+            event: 'conversion',
+            send_to: 'AW-17024068643/_bxECNvTnr0aEKPY2rU_', 
+            value: 1.0, 
+            currency: 'ARS'
+        });
+        
+    
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('conversion', 'success');
+      router.push(currentUrl.toString());
+      action(formData); 
+      }
+      catch (error) { 
+        console.error("Error al enviar el formulario:", error);
+        alert("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+      }
     },
   });
 

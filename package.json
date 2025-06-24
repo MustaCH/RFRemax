@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@getbrevo/brevo": "^2.2.0",
+    "@next/third-parties": "^15.3.4",
     "formik": "^2.4.6",
     "framer-motion": "^11.12.0",
     "ldrs": "^1.1.7",
