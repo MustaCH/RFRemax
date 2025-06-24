@@ -3,7 +3,7 @@ import { StrapiImage, StrapiDescriptionBlock } from "./strapi-types";
 
 const API_URL =
   process.env.NEXT_PUBLIC_STRAPI_API_URL ||
-  "http://rfremax-strapi-sz3p1u-7515fd-31-97-164-164.traefik.me/";
+  "https://strapi.qiuadminplatform.space";
 
 export interface StrapiResponse<T> {
   data: T[];
