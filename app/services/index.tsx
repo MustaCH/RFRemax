@@ -2,7 +2,8 @@ import { IProjectType } from "../types";
 import { StrapiImage, StrapiDescriptionBlock } from "./strapi-types";
 
 const API_URL =
-  process.env.NEXT_PUBLIC_STRAPI_API_URL || "https://rfcms.fly.dev";
+  process.env.NEXT_PUBLIC_STRAPI_API_URL ||
+  "http://rfremax-strapi-sz3p1u-7515fd-31-97-164-164.traefik.me/";
 
 export interface StrapiResponse<T> {
   data: T[];
