@@ -12,7 +12,7 @@ interface ContactFormProps {
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-// import { sendGTMEvent } from "@next/third-parties/google";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = true, showContent = true }) => {
   const [success, setSuccess] = useState(false);
@@ -47,18 +47,18 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
     
       await action(formData);
 
-      // sendGTMEvent({
-      //   event: 'conversion', 
-      //   formType: 'contact',
-      //   ...values 
-      // });
+      sendGTMEvent({
+        event: 'conversion', 
+        formType: 'contact',
+        ...values 
+      });
 
-      // sendGTMEvent({
-      //   event: 'conversion',
-      //   send_to: 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
-      //   value: 1.0,
-      //   currency: 'ARS'
-      // });
+      sendGTMEvent({
+        event: 'conversion',
+        send_to: 'AW-17024068643/_bxECNvTnr0aEKPY2rU_',
+        value: 1.0,
+        currency: 'ARS'
+      });
 
       setSuccess(true);
       

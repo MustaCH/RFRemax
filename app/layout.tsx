@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar, Footer } from "./components";
 import { ModalProvider } from "./context";
 import { GoogleTagManager } from '@next/third-parties/google'
-import Head from "next/head";
 
 
 
@@ -62,11 +61,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <Head>
       {/* Google Tag Manager */}
       <GoogleTagManager gtmId="GTM-K846RW3R" />
       {/* Google Ads */}
-      </Head>
       <body className={`${outfitFont.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
