@@ -12,7 +12,7 @@ interface ContactFormProps {
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { sendGTMEvent } from "@next/third-parties/google";
+// import { sendGTMEvent } from "@next/third-parties/google";
 
 const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = true, showContent = true }) => {
   const [success, setSuccess] = useState(false);
