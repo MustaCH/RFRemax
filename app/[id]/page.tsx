@@ -120,7 +120,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 justify-evenly gap-4">
         <div className="flex flex-col gap-4">
           <div>
-            <h1 className="md:hidden text-xl md:text-3xl">{project?.title}</h1>
+            <h1 className="md:hidden text-3xl font-semibold">{project?.title}</h1>
           </div>
           {project?.images && project.images.length > 0 ? (
             <div>
