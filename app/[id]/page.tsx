@@ -119,6 +119,9 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
       <main className="px-2 py-4 md:px-24 md:pt-4 md:pb-24">
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 justify-evenly gap-4">
         <div className="flex flex-col gap-4">
+          <div>
+            <h1 className="md:hidden text-xl md:text-3xl">{project?.title}</h1>
+          </div>
           {project?.images && project.images.length > 0 ? (
             <div>
               <Swiper
