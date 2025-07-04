@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar, Footer } from "./components";
+import WhatsappButton from "./components/whatsapp-button";
 import { ModalProvider } from "./context";
 import { GoogleTagManager } from '@next/third-parties/google'
 
@@ -78,6 +79,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <WhatsappButton />
         </ModalProvider>
       </body>
     </html>
