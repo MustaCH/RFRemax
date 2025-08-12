@@ -169,7 +169,7 @@ const ContactForm: FC<ContactFormProps> = ({ action, isLoading, showSubject = tr
       :
       <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
+          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200 shadow-lg"
         >
         Enviar
       </button>}

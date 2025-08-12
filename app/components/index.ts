@@ -8,3 +8,4 @@ export { default as PropertySpecs } from "./property-specs";
 export { default as PropertyInfo } from "./propety-info";
 export { default as PropertyContact } from "./property-contact";
 export { default as ContactFormModal } from "./contact-form-modal";
+export { default as ContactButton } from "./contact-button";

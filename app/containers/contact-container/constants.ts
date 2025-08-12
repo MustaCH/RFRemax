@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
 type ContactItemProp = {
@@ -29,11 +29,5 @@ export const contactItems: ContactItemProp[] = [
         value: '@rofrola.remax',
         url: 'https://www.instagram.com/rofrola.remax/profilecard/?igsh=MTNjZ3htem5mMTljbQ==',
         icon: FaInstagram
-    },
-    {
-        name: 'tikTok',
-        value: 'rofrola.remax',
-        url: 'https://www.tiktok.com/@rofrola.remax?_t=8rX61PVrxvL&_r=1',
-        icon: FaTiktok
     }
 ]
