@@ -199,12 +199,6 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
             </h2>
             <PropertyContactForm
               propertyTitle={project?.title || "Propiedad"}
-              isLoading={isSending}
-              onSend={async (formData) => {
-                setIsSending(true);
-                await handleForm(formData);
-                setIsSending(false);
-              }}
             />
           </div>
         </div>

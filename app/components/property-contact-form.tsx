@@ -1,27 +1,30 @@
 import { FC } from "react";
-import ContactForm from "./contact-form";
+import { FaWhatsapp } from "react-icons/fa";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 interface PropertyContactFormProps {
   propertyTitle: string;
-  isLoading: boolean;
-  onSend: (formData: FormData) => void;
 }
 
-const PropertyContactForm: FC<PropertyContactFormProps> = ({ propertyTitle, isLoading, onSend }) => {
-  // Pre-fill the subject and content with the property title and user data
-  const action = (formData: FormData) => {
-    const nombre = formData.get("to_name") || "";
-    const email = formData.get("email") || "";
-    const telefono = formData.get("phone") || "";
-    const subject = `Consulta sobre la propiedad: ${propertyTitle}`;
-    const content = `Datos del usuario:<br/>Nombre: ${nombre}<br/>Email: ${email}<br/>Teléfono: ${telefono}<br/>Propiedad: ${propertyTitle}`;
-    formData.set("subject", subject);
-    formData.set("content", content);
-    onSend(formData);
+const PropertyContactForm: FC<PropertyContactFormProps> = ({ propertyTitle }) => {
+
+  const handleClick = () => {
+    sendGTMEvent({
+      event: "conversion",
+      type: "whatsapp_click",
+      send_to: "AW-17024068643/_bxECNvTnr0aEKPY2rU_",
+      value: 1.0,
+      currency: "ARS",
+    });
   };
 
   return (
-    <ContactForm action={action} isLoading={isLoading} showSubject={false} showContent={false} />
+    <div className="w-full">
+        <a href="https://api.whatsapp.com/send/?phone=%2B5491158942180&type=phone_number&app_absent=0" target="_blank" className="flex items-center justify-center gap-1 cursor-pointer hover:opacity-80 transition-all bg-green-500 rounded-full py-2 px-4 w-full" onClick={handleClick}>
+            <FaWhatsapp className="w-10 h-10 text-white"/>
+            <p className="text-white font-semibold text-lg">CONTACTAME</p>
+        </a>
+    </div>
   );
 };
 
