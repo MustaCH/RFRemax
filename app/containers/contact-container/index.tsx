@@ -1,8 +1,20 @@
 import { ContactButton } from "@/app/components";
 import { contactItems } from "./constants";
 import { FaCheck, FaWhatsapp } from "react-icons/fa";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export const ContactContainer = () => {
+
+    const handleClick = () => {
+        sendGTMEvent({
+          event: "conversion",
+          type: "whatsapp_home_click",
+          send_to: "AW-17024068643/_bxECNvTnr0aEKPY2rU_",
+          value: 1.0,
+          currency: "ARS",
+        });
+    };
+
     return (
         <div className="flex flex-col justify-center items-center py-20 px-8 md:p-20">
             <div className="flex flex-col gap-4 mb-8">
@@ -30,7 +42,7 @@ export const ContactContainer = () => {
                 </div>
             </div>
             <div className="w-full lg:w-96">
-                <a href="https://api.whatsapp.com/send/?phone=%2B5491158942180&type=phone_number&app_absent=0" target="_blank" className="flex items-center justify-center gap-1 cursor-pointer hover:opacity-80 transition-all bg-green-500 rounded-full py-2 px-4 w-full">
+                <a href="https://api.whatsapp.com/send/?phone=%2B5491158942180&type=phone_number&app_absent=0" target="_blank" className="flex items-center justify-center gap-1 cursor-pointer hover:opacity-80 transition-all bg-green-500 rounded-full py-2 px-4 w-full" onClick={handleClick}>
                     <FaWhatsapp className="w-10 h-10 text-white"/>
                     <p className="text-white font-semibold text-lg">CONTACTAME</p>
                 </a>

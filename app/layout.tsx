@@ -79,7 +79,6 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
-          <WhatsappButton />
         </ModalProvider>
       </body>
     </html>
