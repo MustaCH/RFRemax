@@ -1,4 +1,3 @@
-import { ContactCard } from "@/app/components";
 import { ContactButton } from "@/app/components";
 import { contactItems } from "./constants";
 import { FaCheck, FaWhatsapp } from "react-icons/fa";
