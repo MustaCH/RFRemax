@@ -11,7 +11,7 @@ const PropertyContactForm: FC<PropertyContactFormProps> = ({ propertyTitle }) =>
   const handleClick = () => {
     sendGTMEvent({
       event: "conversion",
-      type: "whatsapp_click",
+      type: `${propertyTitle}_whatsapp_click`,
       send_to: "AW-17024068643/_bxECNvTnr0aEKPY2rU_",
       value: 1.0,
       currency: "ARS",
