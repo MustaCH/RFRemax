@@ -11,8 +11,9 @@ interface ContactButtonProps {
 
 const ContactButton: FC<ContactButtonProps> = ({name, value, url, Icon}) => {
     return (
-        <Link id={name} target="_blank" href={url} aria-label={value} className="group flex flex-col items-center justify-center bg-[#4088e3] hover:bg-transparent duration-300 ease-out rounded-full p-3 w-fit">
-            <Icon className='group-hover:text-[#4088e3] text-5xl text-white transition-opacity duration-300 ease-out' aria-label={value} />
+        <Link id={name} target="_blank" href={url} aria-label={value} className="flex items-center justify-center gap-1 hover:opacity-80 transition-all duration-300 ease-out rounded-full p-2 w-fit">
+            <Icon className='text-xl text-gray-500 transition-opacity duration-300 ease-out' aria-label={value} />
+            <p className="text-lg text-gray-500">{value}</p>
         </Link>
     )
 }
