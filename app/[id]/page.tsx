@@ -11,7 +11,6 @@ import "swiper/css/thumbs";
 import { IProjectType } from "../types";
 import { PropertyContact, PropertyInfo, PropertySpecs } from "../components";
 import PropertyContactForm from "../components/property-contact-form";
-import { handleForm } from "../action";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import { getPropertyById } from "../services";
@@ -25,7 +24,6 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [isSending, setIsSending] = useState(false);
   const [video, setVideo] = useState("")
 
 
