@@ -191,7 +191,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
           </div>
 
           {/* Formulario de contacto para propiedad */}
-          <div className="bg-white border border-[#B0BBC5] shadow-md p-8 rounded-lg h-fit">
+          <div className="h-fit">
             <h2 className="text-2xl font-semibold mb-4">
               Consultar por esta propiedad
             </h2>
