@@ -19,7 +19,7 @@ const PropertyContactForm: FC<PropertyContactFormProps> = ({ propertyTitle }) =>
   };
 
   return (
-    <div className="w-full my-8">
+    <div className="w-full my-6">
         <a href={`https://api.whatsapp.com/send/?phone=%2B5491158942180&text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20propiedad%20${propertyTitle}&type=phone_number&app_absent=0`} target="_blank" className="flex items-center justify-center gap-1 cursor-pointer hover:opacity-80 transition-all bg-green-500 rounded-full py-2 px-4 w-full" onClick={handleClick}>
             <FaWhatsapp className="w-10 h-10 text-white"/>
             <p className="text-white font-semibold text-lg">CONTACTAME</p>
