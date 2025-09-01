@@ -27,6 +27,10 @@ export const Navbar = () => {
                     {navlinks.map((link, index) => (
                         <li key={index}><Link className={query !== link.url ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={link.url}>{link.name}</Link></li>
                     ))}
+                    <li className='flex gap-1'>
+                        <Link className={query !== "quiero/vender" ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={"/quiero/vender"}>vender</Link> /
+                        <Link className={query !== "quiero/alquilar" ? 'uppercase font-light hover:underline transition-all duration-300 ease-in-out' : 'uppercase underline'} href={"/quiero/alquilar"}>alquilar</Link>
+                    </li>
                 </ul>
                 <div className='md:hidden flex flex-col items-center'>
                     <button className='relative z-50' onClick={toggleMenu} aria-label="Toggle Menu">

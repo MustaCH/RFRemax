@@ -24,7 +24,7 @@ const OperationPage = ({ params }: Props) => {
 
   return (
     <main className="h-full lg:grid lg:grid-cols-2 mt-2 p-6 md:p-16 bg-[url(https://res.cloudinary.com/dfuru6l6d/image/upload/v1745614361/Dise%C3%B1o_sin_t%C3%ADtulo_anjpdp_jpq0jr.webp)]">
-      <div className="hidden lg:flex bg-[url(/bannerwelcome.jpeg)] bg-cover bg-center h-full lg:h-auto rounded-tl-lg rounded-bl-lg">
+      <div className="hidden lg:flex bg-[url(/bannerwelcome.jpeg)] bg-cover bg-[center_left_-12rem] h-full lg:h-auto rounded-tl-lg rounded-bl-lg">
       </div>
       <div className="flex flex-col gap-16 py-8 md:py-10 px-4 md:px-8 h-full lg:h-auto md:p-20 md:text-white bg-slate-200 md:bg-slate-800 rounded-lg md:rounded-tl-none md:rounded-bl-none md:rounded-tr-lg md:rounded-br-lg">
         <div className="flex flex-col gap-4">

@@ -20,5 +20,5 @@ export const navlinks: navlink[] = [
     {
         "name": "contacto",
         "url": "/#contacto"
-    },
+    }
 ]
