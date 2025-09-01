@@ -7,7 +7,7 @@ export const Footer = () => {
         <footer className='flex flex-col items-center py-4 gap-6 bg-[#B0BBC5] px-6'>
             <div className='flex flex-col gap-4 md:gap-0 md:flex-row justify-evenly items-center w-full'>
                 <div>
-                    <img className='w-24' src="logo.png" alt="logo-rf" />
+                    <img className='w-24' src="/logo.png" alt="logo-rf" />
                 </div>
                 <div>
                     <ul className='flex md:flex-col gap-4 md:gap-1'>
