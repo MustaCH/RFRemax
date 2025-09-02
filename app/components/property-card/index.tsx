@@ -63,9 +63,9 @@ export const PropertyCard: FC<PropertyCardProps> = ({
           <h3 className="text-xs md:text-sm text-[#4088e3]">{title}</h3>
         </div>
         <div className="flex gap-1 text-xs mt-4 opacity-75">
-          {location?.province !== BACITY && <p>{location?.province} /</p>}
+          {location?.province !== location?.city && <p>{location?.province} /</p>}
           <p>
-            {location?.city} {location?.hood && "/"}
+            {location?.city} /
           </p>
           <p>{location?.hood}</p>
         </div>
