@@ -16,8 +16,6 @@ interface PropertyCardProps {
   location?: LocationType;
 }
 
-const BACITY = "Ciudad de Buenos Aires";
-
 export const PropertyCard: FC<PropertyCardProps> = ({
   image,
   operation,
