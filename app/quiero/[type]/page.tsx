@@ -103,20 +103,20 @@ const OperationPage = ({ params }: Props) => {
         </div>
         <div>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <label htmlFor="name">Nombre completo</label>
-            <input className="border border-slate-400 rounded-md p-2 text-black" type="text" name="name" id="name" />
+            <label htmlFor="name">Nombre</label>
+            <input required className="border border-slate-400 rounded-md p-2 text-black" type="text" name="name" id="name" placeholder="Tu nombre completo"/>
             <label htmlFor="phone">Telefono celular</label>
-            <input className="border border-slate-400 rounded-md p-2 text-black" type="tel" name="phone" id="phone" />
+            <input required className="border border-slate-400 rounded-md p-2 text-black" type="tel" name="phone" id="phone" placeholder="Cómo figura en whatsapp"/>
             <label htmlFor="email">Email</label>
-            <input className="border border-slate-400 rounded-md p-2 text-black" type="email" name="email" id="email" />
+            <input required className="border border-slate-400 rounded-md p-2 text-black" type="email" name="email" id="email" placeholder="Tu mejor dirección de email"/>
             <div className="flex gap-4">
               <div>
-                <label htmlFor="neighborhood">Barrio del a propiedad</label>
-                <input className="border border-slate-400 rounded-md p-2 text-black" type="text" name="neighborhood" id="neighborhood" />
+                <label htmlFor="neighborhood">Barrio de la propiedad</label>
+                <input required className="border border-slate-400 rounded-md p-2 text-black" type="text" name="neighborhood" id="neighborhood" />
               </div>
               <div>
                 <label htmlFor="rooms">Cantidad de ambientes</label>
-                <input className="border border-slate-400 rounded-md p-2 text-black" type="number" name="rooms" id="rooms" />
+                <input required className="border border-slate-400 rounded-md p-2 text-black" type="number" name="rooms" id="rooms" />
               </div>
             </div>
             <label htmlFor="message">Mensaje</label>
