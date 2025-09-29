@@ -81,7 +81,7 @@ const OperationPage = ({ params }: Props) => {
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'RE/MAX Time',
+                name: 'RE/MAX Desafío',
               },
             }),
           }}
@@ -145,7 +145,7 @@ const OperationPage = ({ params }: Props) => {
                     <h3 className="text-2xl font-semibold">¿Quien soy?</h3>
                 </div>
                 <p className="text-sm">
-                    Soy Romina Frola, asesora inmobiliaria en RE/MAX Time, especializada en ofrecer un servicio personalizado y 
+                    Soy Romina Frola, asesora inmobiliaria en RE/MAX Desafío, especializada en ofrecer un servicio personalizado y 
                     transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.<br/><br/>
                     Mi pasión por el rubro nació de mi interés en ayudar a las personas a encontrar su hogar perfecto, 
                     brindando un servicio que combina ética, compromiso y dedicación. Como Personal Shopper Inmobiliario, 

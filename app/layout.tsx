@@ -25,10 +25,10 @@ const outfitFont = localFont({
 
 export const metadata: Metadata = {
   title: "Romina Frola - Agente Inmobiliario",
-  description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Time, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
+  description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Desafío, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
   openGraph: {
-    title: "Romina Frola - Agente Inmobiliario | RE/MAX Time",
-    description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Time, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
+    title: "Romina Frola - Agente Inmobiliario | RE/MAX Desafío",
+    description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Desafío, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
     url: "https://rominafrola.com/",
     type: "website",
     images: [
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Romina Frola - Agente Inmobiliario | RE/MAX Time",
-    description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Time, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
+    title: "Romina Frola - Agente Inmobiliario | RE/MAX Desafío",
+    description: "Soy Romina Frola, asesora inmobiliaria en RE/MAX Desafío, especializada en ofrecer un servicio personalizado y transparente que acompaña a cada cliente en su camino hacia la compra, venta o alquiler de su propiedad ideal.",
     images: ["https://rominafrola.com/og-default.jpg"],
   },
   verification: {
