@@ -236,12 +236,8 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
           <div className="flex flex-col gap-2 p-8 h-fit">
             <h4 className="text-2xl">Disclaimer</h4>
             <p className="text-sm">
-              Corredor Matriculado Responsable José David Winer -CUCICBA 6346-
-              CMCPSI 6433.
-              <br /> Todas las propiedades que figuran en éste sitio web se
-              encuentran a cargo de un profesional matriculado, la
-              intermediación y la conclusión de las operaciones serán llevadas
-              exclusivamente por él.
+              Corredor Matriculado Responsable Ignacio F Feijoo CUCICBA 6505-CMCPSI 6431.
+              <br /> En cumplimiento de las leyes vigentes que regulan el corretaje inmobiliario, Ley Nacional 25.028, Ley 22.802 de Lealtad Comercial, Ley 24.240 de Defensa al Consumidor, las normas del Código Civil y Comercial de la Nación y Constitucionales, los agentes/gestores NO ejercen el corretaje inmobiliario. Todas las operaciones inmobiliarias son objeto de intermediación y conclusión por parte de los corredores públicos inmobiliarios colegiados, cuyos datos se exhiben en cada publicación de propiedad objeto de comercialización.
             </p>
           </div>
         </div>
