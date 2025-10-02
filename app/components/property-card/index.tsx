@@ -42,13 +42,13 @@ export const PropertyCard: FC<PropertyCardProps> = ({
             </p>
           </div>
         )}
-        {title === 'Venta Depto. 3 Amb. Puerto Madero - 3 Cocheras' && 
+        {title === 'Venta Depto. 3 Amb. Puerto Madero - 3 Cocheras' && (
         <div className="absolute top-0 right-0 p-2 bg-blue-700 rounded-tr-lg rounded-bl-lg">
             <p className="text-white">
               En negociación
             </p>
           </div>
-         }
+         )}
       </div>
       <div className="flex flex-col gap-2 px-6 pb-6 pt-3">
         <div className="border border-[#B0BBC5] rounded-lg p-1 w-fit text-xs">
