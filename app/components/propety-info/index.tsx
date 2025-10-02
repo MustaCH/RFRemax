@@ -30,7 +30,11 @@ export const PropertyInfo: FC<PropertyInfoProps> = ({ project }) => {
               ? "Venta"
               : project?.operation.type === "RENT"
               ? "Alquiler"
-              : project?.title === "Venta Depto. 3 Amb. Puerto Madero - 3 Cocheras" ? "En negociación" : ""}
+              : ""}
+          </div>
+        ) : project?.title === "Venta Depto. 3 Amb. Puerto Madero - 3 Cocheras" ? (
+          <div className="text-sm border border-[#B0BBC5] bg-blue-700 text-white py-1 px-2 w-fit rounded-lg mb-2">
+            En negociación
           </div>
         ) : (
           <div className="text-sm border border-[#B0BBC5] bg-red-700 text-white py-1 px-2 w-fit rounded-lg mb-2">
