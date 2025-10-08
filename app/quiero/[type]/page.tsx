@@ -3,8 +3,8 @@
 import { sendGTMEvent } from "@next/third-parties/google";
 import Head from "next/head";
 import { useState } from "react";
-import { FaCheck, FaHandHolding, FaHome, FaSearch } from "react-icons/fa";
-import { FaHandsBound, FaHandshakeSimple } from "react-icons/fa6";
+import { FaCheck, FaHome, FaSearch } from "react-icons/fa";
+import { FaHandshakeSimple } from "react-icons/fa6";
 
 interface Props {
   params: {
