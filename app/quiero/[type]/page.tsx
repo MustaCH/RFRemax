@@ -130,7 +130,7 @@ const OperationPage = ({ params }: Props) => {
                   <FaSearch className="text-4xl text-blue-500"/>
                 </div>
                 <h3 className="text-3xl font-semibold text-white">Valoración</h3>
-                <p className="text-white text-md">La valoración experta de tu propiedad con un asesoramiento inmobiliario completo hacen que el proceso sea muchos más fácil</p>
+                <p className="text-white text-md">La valoración experta de tu propiedad con un asesoramiento inmobiliario completo hacen que el proceso sea mucho más fácil</p>
               </div>
               <div className="flex flex-col items-center gap-4">
                 <div className="bg-slate-200 p-4 rounded-full shadow-lg">
