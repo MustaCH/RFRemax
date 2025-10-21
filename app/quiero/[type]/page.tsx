@@ -16,11 +16,7 @@ interface Props {
 const OperationPage = ({ params }: Props) => {
   const { type } = params;
   const [status, setStatus] = useState<"idle"|"sending"|"ok"|"error">("idle");
-  const [neighborhoodQuery, setNeighborhoodQuery] = useState("");
   const barrios = barrios_caba.barrios_caba;
-  const filteredBarrios = barrios.filter((b) =>
-    b.toLowerCase().includes(neighborhoodQuery.toLowerCase())
-  );
   const WEBHOOK = "https://qiuadminplatform.space/webhook/rf-forms";
 
   
