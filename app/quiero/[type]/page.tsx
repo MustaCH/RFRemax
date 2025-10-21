@@ -5,6 +5,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { FaCheck, FaHome, FaSearch } from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
+import barrios_caba from "../barrios.json";
 
 interface Props {
   params: {
@@ -15,48 +16,58 @@ interface Props {
 const OperationPage = ({ params }: Props) => {
   const { type } = params;
   const [status, setStatus] = useState<"idle"|"sending"|"ok"|"error">("idle");
+  const [neighborhoodQuery, setNeighborhoodQuery] = useState("");
+  const barrios = barrios_caba.barrios_caba;
+  const filteredBarrios = barrios.filter((b) =>
+    b.toLowerCase().includes(neighborhoodQuery.toLowerCase())
+  );
   const WEBHOOK = "https://qiuadminplatform.space/webhook/rf-forms";
 
   
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-  
-    const form = e.currentTarget;
-    const data = new FormData(form);
-  
-    // agrega el campo type al form
-    data.append("type", type);
-  
-    // dispara el evento GTM
-    sendGTMEvent({
-      event: "conversion",
-      type: "form_submit",
-      formType: type, // para distinguir qué tipo de form fue
-      send_to: "AW-17024068643/NRUcCIyYyakbEKPY2rU_",
-      value: 1.0,
-      currency: "ARS",
-    });
-  
-    try {
-      const res = await fetch(WEBHOOK, {
-        method: "POST",
-        body: data,
-      });
-  
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setStatus("ok");
-      form.reset();
-      // --- Añadir query param a la URL sin recargar ---
-      const url = new URL(window.location.href);
-      url.searchParams.set("conv", "form_ok"); // <--- cámbialo si querés
-      window.history.replaceState({}, "", url.toString());
+async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
 
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-    }
+  const form = e.currentTarget;
+  const data = new FormData(form);
+  const neighborhood = data.get("neighborhood")?.toString() || "";
+
+  // 🔒 Validación: verificar que el barrio exista
+  if (!barrios.includes(neighborhood)) {
+    alert("Por favor seleccioná un barrio válido de la lista.");
+    return; // corta el envío
   }
+
+  setStatus("sending");
+
+  data.append("type", type);
+
+  sendGTMEvent({
+    event: "conversion",
+    type: "form_submit",
+    formType: type,
+    send_to: "AW-17024068643/NRUcCIyYyakbEKPY2rU_",
+    value: 1.0,
+    currency: "ARS",
+  });
+
+  try {
+    const res = await fetch(WEBHOOK, {
+      method: "POST",
+      body: data,
+    });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    setStatus("ok");
+    form.reset();
+    const url = new URL(window.location.href);
+    url.searchParams.set("conv", "form_ok");
+    window.history.replaceState({}, "", url.toString());
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+  }
+}
+
   
 
   const pageTitle = `¿Querés ${type} tu propiedad con un agente experto?`;
@@ -193,18 +204,28 @@ const OperationPage = ({ params }: Props) => {
               <input required className="border border-slate-400 rounded-md p-2 text-black" type="tel" name="phone" id="phone" placeholder="Cómo figura en whatsapp"/>
               <label htmlFor="email">Email</label>
               <input required className="border border-slate-400 rounded-md p-2 text-black" type="email" name="email" id="email" placeholder="Tu mejor dirección de email"/>
-              <div className="flex flex-col md:flex-row gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="neighborhood">Barrio de la propiedad</label>
-                  <input required className="border border-slate-400 rounded-md p-2 text-black" type="text" name="neighborhood" id="neighborhood" />
+                  <input
+                    required
+                    className="border border-slate-400 rounded-md p-2 text-black w-full"
+                    list="barrios-caba"
+                    id="neighborhood"
+                    name="neighborhood"
+                    placeholder="Selecciona una opción"
+                  />
+                  <datalist id="barrios-caba">
+                    {barrios.map((b) => (
+                      <option key={b} value={b} />
+                    ))}
+                  </datalist>
                 </div>
                 <div>
                   <label htmlFor="rooms">Cantidad de ambientes</label>
-                  <input required className="border border-slate-400 rounded-md p-2 text-black" type="number" name="rooms" id="rooms" />
+                  <input required className="border border-slate-400 rounded-md p-2 text-black w-full" type="number" name="rooms" id="rooms" />
                 </div>
               </div>
-              <label htmlFor="message">Mensaje</label>
-              <textarea className="border border-slate-400 rounded-md p-2 text-black" name="message" id="message"></textarea>
               <button
                 type="submit"
                 disabled={status==="sending"}
