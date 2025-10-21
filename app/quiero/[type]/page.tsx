@@ -33,7 +33,7 @@ const OperationPage = ({ params }: Props) => {
       event: "conversion",
       type: "form_submit",
       formType: type, // para distinguir qué tipo de form fue
-      send_to: "AW-17024068643/_bxECNvTnr0aEKPY2rU_",
+      send_to: "AW-17024068643/NRUcCIyYyakbEKPY2rU_",
       value: 1.0,
       currency: "ARS",
     });
