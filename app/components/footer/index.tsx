@@ -29,7 +29,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className='text-xs text-center md:text-sm'>Corredor Matriculado Responsable José David Winer -CUCICBA 6346- CMCPSI 6433.</p>
+            <p className='text-xs text-center md:text-sm'>Corredor Matriculado Responsable Ignacio F Feijoo CUCICBA 6505-CMCPSI 6431.</p>
         </footer>
     )
 }
