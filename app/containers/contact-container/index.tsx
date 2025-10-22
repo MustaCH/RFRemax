@@ -19,7 +19,7 @@ export const ContactContainer = () => {
         <div className="flex flex-col justify-center items-center py-20 px-8 md:p-20">
             <div className="flex flex-col gap-4 mb-8">
                 <h2 className="text-3xl lg:text-4xl font-semibold lg:text-center">¿Estás buscando comprar, alquilar o vender una propiedad?</h2>
-                <p className="lg:text-center">Te acompaño en cada paso para asegurar una proceso exitoso y sin complicaciones,<br />contactame hoy enviandome un mensaje por WhatsApp.</p>
+                <p className="lg:text-center">Te acompañamos en cada paso para asegurar un proceso exitoso y sin complicaciones,<br />contactanos hoy enviando un mensaje por WhatsApp.</p>
                 <div className="flex lg:flex-row flex-col justify-center gap-4 mt-8">
                     <div className="flex items-center gap-1">
                         <div className="flex items-center justify-center w-6 h-6 bg-[#4088e3] rounded-full">
@@ -44,7 +44,7 @@ export const ContactContainer = () => {
             <div className="w-full lg:w-96">
                 <a href="https://api.whatsapp.com/send/?phone=%2B5491158942180&type=phone_number&app_absent=0" target="_blank" className="flex items-center justify-center gap-1 cursor-pointer hover:opacity-80 transition-all bg-green-500 rounded-full py-2 px-4 w-full" onClick={handleClick}>
                     <FaWhatsapp className="w-10 h-10 text-white"/>
-                    <p className="text-white font-semibold text-lg">CONTACTAME</p>
+                    <p className="text-white font-semibold text-lg">CONTACTANOS</p>
                 </a>
             </div>
             {/* <ContactCard/> */}
