@@ -15,7 +15,7 @@ interface Props {
 
 const OperationPage = ({ params }: Props) => {
   const { type } = params;
-  const [status, setStatus] = useState<"idle"|"sending"|"ok"|"error">("idle");
+  const [status, setStatus] = useState<"idle"|"sending"|"ok"|"error"|"wrong">("idle");
   const barrios = barrios_caba.barrios_caba;
   const WEBHOOK = "https://qiuadminplatform.space/webhook/rf-forms";
 
@@ -29,7 +29,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 
   // 🔒 Validación: verificar que el barrio exista
   if (!barrios.includes(neighborhood)) {
-    alert("Por favor seleccioná un barrio válido de la lista.");
+    setStatus("wrong");
     return; // corta el envío
   }
 
@@ -231,10 +231,13 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
               </button>
 
               {status==="ok" && (
-                <p className="text-green-400 mt-2">¡Gracias! Te responderé a la brevedad.</p>
+                <p className="text-green-400 mt-2">¡Gracias! Te responderemos a la brevedad.</p>
               )}
               {status==="error" && (
                 <p className="text-red-400 mt-2">Hubo un problema. Probá de nuevo.</p>
+              )}
+              {status==="wrong" && (
+                <p className="text-red-400 mt-2">Por favor seleccioná un barrio válido de la lista.</p>
               )}
             </form>
           </section>
