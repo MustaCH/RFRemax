@@ -140,13 +140,13 @@ const OperationPage = ({ params }: Props) => {
               <div className="grid grid-cols-2 max-w-xl mx-auto gap-4">
                 <a
                   href="#form"
-                  className="text-sm md:text-lg bg-green-500 hover:bg-green-600 duration-150 text-white font-semibold px-6 py-4 rounded-lg shadow-lg"
+                  className="text-sm md:text-lg bg-green-500 hover:bg-green-600 duration-150 text-white font-semibold px-3 md:px-6 py-4 rounded-lg shadow-lg"
                 >
                   Recibir mi ACM gratuito
                 </a>
                 <a
                   href="#whoami"
-                  className="text-sm md:text-lg bg-blue-500 hover:bg-blue-600 duration-150 text-white font-semibold px-6 py-4 rounded-lg shadow-lg"
+                  className="text-sm md:text-lg bg-blue-500 hover:bg-blue-600 duration-150 text-white font-semibold px-3 md:px-6 py-4 rounded-lg shadow-lg"
                 >
                   Más información
                 </a>
