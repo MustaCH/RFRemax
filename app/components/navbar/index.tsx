@@ -80,7 +80,7 @@ export const Navbar = () => {
               )}
             </button>
             <aside
-              className={`fixed top-[-0.5rem] right-0 h-full w-2/4 max-w-xs transform ${
+              className={`fixed top-[-0.5rem] right-0 h-full w-2/3 max-w-xs transform ${
                 isOpen ? "translate-x-0" : "translate-x-full"
               } transition-transform duration-300 ease-in-out`}
             >
