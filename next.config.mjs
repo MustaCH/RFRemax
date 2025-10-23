@@ -2,6 +2,9 @@
 const isDev = process.env.NODE_ENV !== "production";
 
 const nextConfig = {
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
   async headers() {
     const scriptSrc = [
       "'self'",
@@ -28,11 +31,17 @@ const nextConfig = {
               "frame-src https://www.google.com https://www.youtube.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://www.googletagmanager.com;",
             ].join(" "),
           },
-          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "geolocation=(), microphone=(), camera=()" },
+          {
+            key: "Permissions-Policy",
+            value: "geolocation=(), microphone=(), camera=()",
+          },
         ],
       },
     ];
