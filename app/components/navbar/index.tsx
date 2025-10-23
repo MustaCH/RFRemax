@@ -100,12 +100,12 @@ export const Navbar = () => {
                     </Link>
                   </li>
                 ))}
-                <p className="pe-2">Tengo una propiedad</p>
-                <li className="flex gap-1 justify-end pe-2">
+                <p className="pe-2">Tengo una propiedad quiero...</p>
+                <li className="flex gap-1 justify-end px-2">
                   <Link
                     className={
                       query !== "quiero/vender"
-                        ? "font-semibold bg-green-500 rounded-lg text-white p-2 w-fit hover:underline transition-all duration-300 ease-in-out"
+                        ? "font-semibold bg-green-500 rounded-lg text-white text-center p-2 w-full hover:underline transition-all duration-300 ease-in-out"
                         : "underline"
                     }
                     href={"/quiero/vender"}
@@ -115,7 +115,7 @@ export const Navbar = () => {
                   <Link
                     className={
                       query !== "quiero/alquilar"
-                        ? "font-semibold bg-blue-500 rounded-lg text-white p-2 w-fit hover:underline transition-all duration-300 ease-in-out"
+                        ? "font-semibold bg-blue-500 rounded-lg text-white text-center p-2 w-full hover:underline transition-all duration-300 ease-in-out"
                         : "underline"
                     }
                     href={"/quiero/alquilar"}
