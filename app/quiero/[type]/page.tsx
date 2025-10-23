@@ -6,7 +6,6 @@ import { useState } from "react";
 import { FaCheck, FaHome, FaSearch } from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import barrios_caba from "../barrios.json";
-import Image from "next/image";
 
 interface Props {
   params: {
