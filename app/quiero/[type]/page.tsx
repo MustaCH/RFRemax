@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaCheck, FaHome, FaSearch } from "react-icons/fa";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import barrios_caba from "../barrios.json";
+import Image from "next/image";
 
 interface Props {
   params: {
@@ -197,7 +198,7 @@ const OperationPage = ({ params }: Props) => {
           </div>
         </section>
         <section id="whoami" className="mb-12 max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row-reverse gap-8 justify-evenly items-center">
+          <div className="flex flex-col md:flex-row-reverse gap-8 justify-between items-center">
             <div className="rounded-full border-4 border-white bg-cover bg-center shadow-lg bg-[url(https://res.cloudinary.com/dfuru6l6d/image/upload/v1745614226/whoami2_kqbnke.webp)] w-72 h-72 md:w-96 md:h-96"></div>
             <div className="flex flex-col gap-4 bg-white md:text-slate-800 rounded-lg p-8 w-full shadow-lg md:w-1/2 overflow-hidden">
               <div className="border-b border-b-[#4088e3] pb-2">
@@ -224,6 +225,59 @@ const OperationPage = ({ params }: Props) => {
                 mi trabajo, construyendo relaciones basadas en la confianza y el
                 respeto.
               </p>
+            </div>
+          </div>
+          <div id="press" className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white flex items-center gap-4 mt-12 px-4 md:pe-4 py-4 rounded-lg shadow-lg">
+              <Image
+                src="https://res.cloudinary.com/dfuru6l6d/image/upload/v1761218048/prebsa2_jcmbsl.png"
+                alt="recorte-periodistico-1"
+                width={200}
+                height={100}
+                className="rounded-lg md:rounded-tl-lg md:rounded-bl-lg"
+              />
+              <div className="flex flex-col gap-4">
+                <h4 className="font-bold text-xl">
+                  Romina Frola: La pasión por el Servicio Inmobiliario de
+                  Calidad
+                </h4>
+                <p className="text-xs">
+                  Lo que motivó a Romina Frola a unirse a RE/MAX fue su sólida
+                  reputación, tanto a nivel local como global. “Siempre supe
+                  que...
+                </p>
+                <a
+                  href="https://www.perfil.com/"
+                  className="text-blue-500 underline text-sm"
+                >
+                  Ver nota completa
+                </a>
+              </div>
+            </div>
+            <div className="bg-white flex items-center gap-4 mt-12 px-4 md:pe-4 py-4 rounded-lg shadow-lg">
+              <Image
+                src="https://res.cloudinary.com/dfuru6l6d/image/upload/v1761218018/prensa1_onr1dy.png"
+                alt="recorte-periodistico-1"
+                width={200}
+                height={100}
+                className="rounded-lg md:rounded-tl-lg md:rounded-bl-lg"
+              />
+              <div className="flex flex-col gap-4">
+                <h4 className="font-bold text-xl">
+                  Liderando con pasión y excelencia en el mercado inmobiliario
+                </h4>
+                <p className="text-xs">
+                  La profesional destaca también el acompañamiento constante que
+                  ofrece la red RE/MAX, así como las herramientas de
+                  capacitación que...
+                </p>
+                <a
+                  href="https://www.perfil.com/"
+                  className="text-blue-500 underline text-sm"
+                >
+                  Ver nota completa
+                </a>
+              </div>
             </div>
           </div>
         </section>
